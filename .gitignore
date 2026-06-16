@@ -31,3 +31,5 @@ dist-ssr
 # Build & cache
 .eslintcache
 coverage
+*storybook.log
+storybook-static
