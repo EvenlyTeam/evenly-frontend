@@ -1,0 +1,93 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Typography
+ * @TODO: line-weight는 UI 마크업을 진행하면서 조정한다.
+ */
+@theme {
+  --text-display: 28px;
+  --text-display--line-height: 36px;
+  --text-display--font-weight: 700;
+
+  --text-heading-lg: 22px;
+  --text-heading-lg--line-height: 30px;
+  --text-heading-lg--font-weight: 600;
+
+  --text-heading-md: 18px;
+  --text-heading-md--line-height: 26px;
+  --text-heading-md--font-weight: 600;
+
+  --text-heading-sm: 16px;
+  --text-heading-sm--line-height: 24px;
+  --text-heading-sm--font-weight: 600;
+
+  --text-body-lg: 15px;
+  --text-body-lg--line-height: 24px;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 22px;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 18px;
+
+  --text-label: 12px;
+  --text-label--line-height: 16px;
+  --text-label--font-weight: 500;
+}
+
+/* Color */
+@theme {
+  --color-background: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f0f5;
+  --color-input: #ffffff;
+
+  --color-foreground: #1c1c1e;
+  --color-muted-foreground: #6c6c72;
+  --color-subtle-foreground: #aeaeb2;
+  --color-border: #d1d1d6;
+  --color-border-subtle: #e5e5ea;
+
+  --color-primary: #3d6ec4;
+  --color-primary-hover: #2b5db8;
+  --color-positive: #0f8a58;
+  --color-positive-surface: #e8f7f0;
+  --color-negative: #b8401e;
+  --color-negative-surface: #fdeee8;
+  --color-settled: var(--color-positive);
+  --color-preview-surface: #eaf0fa;
+  --color-preview-foreground: #1c3461;
+}
+
+/* Color(Dark) */
+.dark {
+  --color-background: #111113;
+  --color-surface: #1d1d21;
+  --color-surface-muted: #252529;
+  --color-input: #2a2a2f;
+
+  --color-foreground: #f0f0f7;
+  --color-muted-foreground: #98989e;
+  --color-subtle-foreground: #5c5c62;
+  --color-border: #3a3a40;
+  --color-border-subtle: #2e2e34;
+
+  --color-primary: #6f9feb;
+  --color-primary-hover: #5a8fe0;
+  --color-positive: #1db87a;
+  --color-positive-surface: #102d1e;
+  --color-negative: #d85028;
+  --color-negative-surface: #2e1510;
+  --color-settled: var(--color-positive);
+  --color-preview-surface: #1c3461;
+  --color-preview-foreground: #ffffff;
+}
+
+/* Radius */
+@theme {
+  --radius-badge: 4px;
+  --radius-button: 8px;
+  --radius-input: 8px;
+  --radius-card: 12px;
+  --radius-modal: 16px;
+}
