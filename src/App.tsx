@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import SignInPage from './features/auth/pages/SignInPage';
+import SignUpPage from './features/auth/pages/SignUpPage';
 
 function App() {
   /* @TODO: 임시 페이지 전환 Flag */
@@ -15,9 +16,14 @@ function App() {
             page={'Login'}
             onPageChange={() => setPage('login')}
           />
+          <GoToPageButton
+            page={'Register'}
+            onPageChange={() => setPage('register')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
+      {page === 'register' && <SignUpPage />}
     </div>
   );
 }
