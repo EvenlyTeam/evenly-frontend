@@ -1,3 +1,4 @@
+import AuthFooterLink from '../components/AuthFooterLink';
 import AuthHeader from '../components/AuthHeader';
 import AuthSignInForm from '../components/AuthSignInForm';
 
@@ -6,19 +7,14 @@ const SignInPage = () => {
     <main className="min-h-dvh px-6">
       <div className="w-full pt-20">
         <AuthHeader subtitle="모임 정산을 깔끔하게" />
-
         <AuthSignInForm />
       </div>
 
-      <p className="mt-5.5 text-center text-body-sm text-muted-foreground">
-        계정이 없나요?
-        <a
-          href="#"
-          className="ml-1.5 cursor-pointer font-semibold text-primary"
-        >
-          회원가입
-        </a>
-      </p>
+      <AuthFooterLink
+        message="아직 계정이 없으신가요?"
+        linkText="회원가입"
+        href="#"
+      />
     </main>
   );
 };
