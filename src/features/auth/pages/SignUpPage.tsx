@@ -1,17 +1,11 @@
+import AuthHeader from '../components/AuthHeader';
 import AuthInput from '../components/AuthInput';
 
 const SignUpPage = () => {
   return (
     <main className="min-h-dvh px-6">
       <div className="w-full pt-20">
-        <div className="text-center">
-          <p className="text-display leading-none font-semibold text-primary">
-            evenly
-          </p>
-          <p className="mt-2.5 text-body-sm text-muted-foreground">
-            새 계정 만들기
-          </p>
-        </div>
+        <AuthHeader subtitle="새 계정 만들기" />
 
         <form className="mt-10" onSubmit={(e) => e.preventDefault()}>
           <div className="space-y-4">
