@@ -1,3 +1,5 @@
+import AuthInput from '../components/AuthInput';
+
 const SignInPage = () => {
   return (
     <main className="min-h-dvh px-6">
@@ -12,35 +14,20 @@ const SignInPage = () => {
         </div>
 
         <form className="mt-10" onSubmit={(e) => e.preventDefault()}>
-          <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="block text-label text-muted-foreground"
-            >
-              이메일
-            </label>
-            <input
+          <div className="space-y-4">
+            <AuthInput
+              label="이메일"
               id="email"
               type="email"
               autoComplete="email"
               placeholder="evenly@example.com"
-              className="h-12 w-full rounded-input border border-border bg-input px-3.5 font-sans text-body-lg text-foreground transition-all duration-150 outline-none placeholder:text-subtle-foreground focus:border-primary focus:ring-3 focus:ring-primary/35"
             />
-          </div>
-
-          <div className="mt-4 space-y-2">
-            <label
-              htmlFor="password"
-              className="block text-label text-muted-foreground"
-            >
-              비밀번호
-            </label>
-            <input
+            <AuthInput
+              label="비밀번호"
               id="password"
               type="password"
               autoComplete="current-password"
               placeholder="비밀번호"
-              className="h-12 w-full rounded-input border border-border bg-input px-3.5 font-sans text-body-lg text-foreground transition-all duration-150 outline-none placeholder:text-subtle-foreground focus:border-primary focus:ring-3 focus:ring-primary/35"
             />
           </div>
 
