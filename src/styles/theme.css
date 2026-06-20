@@ -109,37 +109,43 @@
 }
 
 /* Color(Dark) */
-.dark {
-  --color-background: #111113;
-  --color-surface: #1d1d21;
-  --color-surface-muted: #252529;
-  --color-input: #2a2a2f;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #111113;
+    --color-surface: #1d1d21;
+    --color-surface-muted: #252529;
+    --color-input: #2a2a2f;
 
-  --color-foreground: #f0f0f7;
-  --color-muted-foreground: #98989e;
-  --color-subtle-foreground: #5c5c62;
+    --color-foreground: #f0f0f7;
+    --color-muted-foreground: #98989e;
+    --color-subtle-foreground: #5c5c62;
 
-  --color-border: rgba(255, 255, 255, 0.13);
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+    --color-border: rgba(255, 255, 255, 0.13);
+    --color-border-subtle: rgba(255, 255, 255, 0.08);
 
-  --color-primary: #6f9feb;
-  --color-primary-hover: #5a8fe0;
-  --color-on-primary: #111113;
+    --color-primary: #6f9feb;
+    --color-primary-hover: #5a8fe0;
+    --color-on-primary: #111113;
 
-  --color-positive: #1db87a;
-  --color-positive-surface: #102d1e;
-  --color-negative: #d85028;
-  --color-negative-surface: #2e1510;
+    --color-positive: #1db87a;
+    --color-positive-surface: #102d1e;
+    --color-negative: #d85028;
+    --color-negative-surface: #2e1510;
 
-  --color-settled: var(--color-positive);
-  --color-danger: var(--color-negative);
+    --color-settled: var(--color-positive);
+    --color-danger: var(--color-negative);
 
-  --color-preview-surface: #1c3461;
-  --color-preview-foreground: #ffffff;
+    --color-preview-surface: #1c3461;
+    --color-preview-foreground: #ffffff;
 
-  --color-focus-ring: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    --color-focus-ring: color-mix(
+      in srgb,
+      var(--color-primary) 40%,
+      transparent
+    );
 
-  --shadow-card: none; /* 다크는 그림자 없이 테두리로 깊이 */
-  --shadow-fab: 0 4px 16px rgba(0, 0, 0, 0.45);
-  --shadow-sheet: 0 -2px 20px rgba(0, 0, 0, 0.5);
+    --shadow-card: none; /* 다크는 그림자 없이 테두리로 깊이 */
+    --shadow-fab: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-sheet: 0 -2px 20px rgba(0, 0, 0, 0.5);
+  }
 }
