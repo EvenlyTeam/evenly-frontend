@@ -7,10 +7,11 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 import prettier from 'eslint-config-prettier';
-import { defineConfig, globalIgnores } from 'eslint/config';
+import { globalIgnores } from 'eslint/config';
 
-export default defineConfig([
+export default tseslint.config(
   globalIgnores(['dist', 'coverage']),
   {
     files: ['**/*.{ts,tsx}'],
@@ -37,5 +38,13 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    ...tailwindcss.configs.recommended,
+    settings: {
+      tailwindcss: {
+        cssConfigPath: './src/index.css',
+      },
+    },
+  },
   ...storybook.configs['flat/recommended'],
-]);
+);
