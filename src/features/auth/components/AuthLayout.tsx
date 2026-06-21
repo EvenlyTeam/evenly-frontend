@@ -1,6 +1,8 @@
+import type { PropsWithChildren } from 'react';
+
 import { AuthBrandPanel } from './AuthBrandPanel';
 
-export function AuthLayout({ children }: React.PropsWithChildren) {
+export function AuthLayout({ children }: PropsWithChildren) {
   return (
     <main className="flex min-h-dvh justify-center">
       <div className="hidden lg:block lg:flex-2">
