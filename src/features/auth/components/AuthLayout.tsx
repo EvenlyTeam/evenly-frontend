@@ -1,6 +1,6 @@
-import AuthBrandPanel from './AuthBrandPanel';
+import { AuthBrandPanel } from './AuthBrandPanel';
 
-const AuthLayout = ({ children }: React.PropsWithChildren) => {
+export function AuthLayout({ children }: React.PropsWithChildren) {
   return (
     <main className="flex min-h-dvh justify-center">
       <div className="hidden lg:block lg:flex-2">
@@ -11,6 +11,4 @@ const AuthLayout = ({ children }: React.PropsWithChildren) => {
       </div>
     </main>
   );
-};
-
-export default AuthLayout;
+}

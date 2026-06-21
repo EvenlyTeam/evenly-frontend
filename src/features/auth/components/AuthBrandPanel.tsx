@@ -1,6 +1,6 @@
 import CheckBadge from '../assets/icons/check-badge.svg?react';
 
-const AuthBrandPanel = () => {
+export function AuthBrandPanel() {
   return (
     <div className="flex h-dvh w-full flex-col justify-between bg-primary px-14 py-13 text-on-primary">
       <div className="text-heading-lg">evenly</div>
@@ -32,6 +32,4 @@ const AuthBrandPanel = () => {
       </div>
     </div>
   );
-};
-
-export default AuthBrandPanel;
+}

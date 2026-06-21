@@ -1,9 +1,11 @@
-import AuthFooterLink from '../components/AuthFooterLink';
-import AuthHeader from '../components/AuthHeader';
-import AuthLayout from '../components/AuthLayout';
-import AuthSignInForm from '../components/AuthSignInForm';
+import {
+  AuthFooterLink,
+  AuthHeader,
+  AuthLayout,
+  AuthSignInForm,
+} from '../components';
 
-const SignInPage = () => {
+export function SignInPage() {
   return (
     <AuthLayout>
       <>
@@ -30,6 +32,4 @@ const SignInPage = () => {
       </>
     </AuthLayout>
   );
-};
-
-export default SignInPage;
+}

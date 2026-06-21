@@ -1,6 +1,6 @@
-import AuthInput from './AuthInput';
+import { AuthInput } from './AuthInput';
 
-const AuthSignInForm = () => {
+export function AuthSignInForm() {
   return (
     <form className="mt-10" onSubmit={(e) => e.preventDefault()}>
       <div className="space-y-4">
@@ -37,6 +37,4 @@ const AuthSignInForm = () => {
       </button>
     </form>
   );
-};
-
-export default AuthSignInForm;
+}
