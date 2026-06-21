@@ -6,7 +6,7 @@ const AuthLayout = ({ children }: React.PropsWithChildren) => {
       <div className="hidden lg:block lg:flex-2">
         <AuthBrandPanel />
       </div>
-      <div className="max-w-140 min-w-120 flex-1 px-6 lg:my-auto lg:px-12">
+      <div className="max-w-140 flex-1 px-6 lg:my-auto lg:px-12">
         {children}
       </div>
     </main>
