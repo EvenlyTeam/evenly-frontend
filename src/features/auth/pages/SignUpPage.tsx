@@ -1,14 +1,19 @@
 import {
+  AuthBrandPanel,
   AuthFooterLink,
   AuthHeader,
-  AuthLayout,
   AuthSignUpForm,
+  AuthStyleWrapper,
 } from '../components';
 
 export function SignUpPage() {
   return (
-    <AuthLayout>
-      <>
+    <AuthStyleWrapper>
+      <AuthStyleWrapper.BrandPanel>
+        <AuthBrandPanel />
+      </AuthStyleWrapper.BrandPanel>
+
+      <AuthStyleWrapper.FormPanel>
         <div className="w-full pt-20">
           <div className="lg:hidden">
             <AuthHeader viewType="mobile" subtitle="새 계정 만들기" />
@@ -29,7 +34,7 @@ export function SignUpPage() {
           linkText="로그인"
           href="#"
         />
-      </>
-    </AuthLayout>
+      </AuthStyleWrapper.FormPanel>
+    </AuthStyleWrapper>
   );
 }

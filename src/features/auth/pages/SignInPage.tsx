@@ -1,14 +1,19 @@
 import {
+  AuthBrandPanel,
   AuthFooterLink,
   AuthHeader,
-  AuthLayout,
   AuthSignInForm,
+  AuthStyleWrapper,
 } from '../components';
 
 export function SignInPage() {
   return (
-    <AuthLayout>
-      <>
+    <AuthStyleWrapper>
+      <AuthStyleWrapper.BrandPanel>
+        <AuthBrandPanel />
+      </AuthStyleWrapper.BrandPanel>
+
+      <AuthStyleWrapper.FormPanel>
         <div className="w-full pt-20">
           <div className="lg:hidden">
             <AuthHeader viewType="mobile" subtitle="모임 정산을 깔끔하게" />
@@ -29,7 +34,7 @@ export function SignInPage() {
           linkText="회원가입"
           href="#"
         />
-      </>
-    </AuthLayout>
+      </AuthStyleWrapper.FormPanel>
+    </AuthStyleWrapper>
   );
 }
