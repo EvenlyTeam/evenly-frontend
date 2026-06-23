@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { SignInPage, SignUpPage } from './features/auth/pages';
+import { GroupListPage } from './pages';
 
 function App() {
   /* @TODO: 임시 페이지 전환 Flag */
@@ -19,10 +20,15 @@ function App() {
             page={'Register'}
             onPageChange={() => setPage('register')}
           />
+          <GoToPageButton
+            page={'GroupList'}
+            onPageChange={() => setPage('group-list')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
       {page === 'register' && <SignUpPage />}
+      {page === 'group-list' && <GroupListPage />}
     </div>
   );
 }
