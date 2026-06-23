@@ -2,27 +2,31 @@
 
 import type { PropsWithChildren } from 'react';
 
+import { createCompoundGuard } from '@/utils/createCompoundGuard';
+
 export const GroupStyleWrapper = Object.assign(Base, {
   Navbar,
-  Body: { D: BodyD, M: BodyM },
+  Body,
 });
+
+const Guard = createCompoundGuard('GroupStyleWrapper');
 
 function Base({ children }: PropsWithChildren) {
   return (
-    <div className="flex min-h-dvh w-full flex-col justify-center">
-      {children}
-    </div>
+    <Guard.Provider>
+      <div className="flex min-h-dvh w-full flex-col justify-center">
+        {children}
+      </div>
+    </Guard.Provider>
   );
 }
 
 function Navbar({ children }: PropsWithChildren) {
+  Guard.useGuard('Navbar');
   return <div className="sticky top-0 w-full">{children}</div>;
 }
 
-function BodyD({ children }: PropsWithChildren) {
-  return <div className="w-full flex-1 px-16 py-8">{children}</div>;
-}
-
-function BodyM({ children }: PropsWithChildren) {
-  return <div className="w-full flex-1 p-4">{children}</div>;
+function Body({ children }: PropsWithChildren) {
+  Guard.useGuard('Body');
+  return <div className="w-full flex-1 p-4 lg:px-16 lg:py-8">{children}</div>;
 }

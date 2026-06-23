@@ -1,4 +1,4 @@
-import { Desktop, Mobile, Navbar } from '@/components';
+import { Navbar } from '@/components';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 import { GroupStyleWrapper } from '../components';
@@ -15,13 +15,7 @@ export function GroupListPage() {
         </Navbar>
       </GroupStyleWrapper.Navbar>
 
-      <Desktop>
-        <GroupStyleWrapper.Body.D>content</GroupStyleWrapper.Body.D>
-      </Desktop>
-
-      <Mobile>
-        <GroupStyleWrapper.Body.M>content</GroupStyleWrapper.Body.M>
-      </Mobile>
+      <GroupStyleWrapper.Body>content</GroupStyleWrapper.Body>
     </GroupStyleWrapper>
   );
 }
