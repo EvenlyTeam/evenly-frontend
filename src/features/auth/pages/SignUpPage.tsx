@@ -1,40 +1,29 @@
+import { Desktop, Mobile } from '@/components';
+
 import {
   AuthBrandPanel,
-  AuthFooterLink,
-  AuthHeader,
-  AuthSignUpForm,
+  AuthSignUpFormPanel,
   AuthStyleWrapper,
 } from '../components';
 
 export function SignUpPage() {
   return (
     <AuthStyleWrapper>
-      <AuthStyleWrapper.BrandPanel>
-        <AuthBrandPanel />
-      </AuthStyleWrapper.BrandPanel>
+      <Desktop>
+        <AuthStyleWrapper.D.BrandPanel>
+          <AuthBrandPanel />
+        </AuthStyleWrapper.D.BrandPanel>
 
-      <AuthStyleWrapper.FormPanel>
-        <div className="w-full pt-20">
-          <div className="lg:hidden">
-            <AuthHeader viewType="mobile" subtitle="새 계정 만들기" />
-          </div>
+        <AuthStyleWrapper.D.FormPanel>
+          <AuthSignUpFormPanel />
+        </AuthStyleWrapper.D.FormPanel>
+      </Desktop>
 
-          <div className="hidden lg:block">
-            <AuthHeader
-              viewType="desktop"
-              title="새 계정 만들기"
-              subtitle="몇 가지만 입력하면 끝나요"
-            />
-          </div>
-          <AuthSignUpForm />
-        </div>
-
-        <AuthFooterLink
-          message="이미 계정이 있으신가요?"
-          linkText="로그인"
-          href="#"
-        />
-      </AuthStyleWrapper.FormPanel>
+      <Mobile>
+        <AuthStyleWrapper.M.FormPanel>
+          <AuthSignUpFormPanel />
+        </AuthStyleWrapper.M.FormPanel>
+      </Mobile>
     </AuthStyleWrapper>
   );
 }
