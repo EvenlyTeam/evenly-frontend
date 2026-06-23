@@ -13,11 +13,11 @@ export const Navbar = Object.assign(Base, { Logo, UserMenu });
 function Base({ isDesktop, children }: PropsWithChildren<NavbarProps>) {
   return (
     <NavbarContext.Provider value={{ isDesktop }}>
-      <div
+      <nav
         className={`flex w-full items-center justify-between border-b border-border-subtle bg-surface ${isDesktop ? 'h-16 px-7' : 'h-14 px-4'}`}
       >
         {children}
-      </div>
+      </nav>
     </NavbarContext.Provider>
   );
 }
