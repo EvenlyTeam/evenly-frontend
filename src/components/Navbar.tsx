@@ -8,13 +8,13 @@ interface NavbarProps {
   isDesktop: boolean;
 }
 
-export const Navbar = Object.assign(Base, { Logo });
+export const Navbar = Object.assign(Base, { Logo, UserMenu });
 
 function Base({ isDesktop, children }: PropsWithChildren<NavbarProps>) {
   return (
     <NavbarContext.Provider value={{ isDesktop }}>
       <div
-        className={`flex w-full items-center border-b border-border-subtle bg-surface ${isDesktop ? 'h-16 px-7' : 'h-14 px-4'}`}
+        className={`flex w-full items-center justify-between border-b border-border-subtle bg-surface ${isDesktop ? 'h-16 px-7' : 'h-14 px-4'}`}
       >
         {children}
       </div>
@@ -32,5 +32,18 @@ function Logo() {
     >
       evenly
     </div>
+  );
+}
+
+function UserMenu({ userName }: { userName: string }) {
+  const initial = userName.charAt(0).toUpperCase();
+
+  return (
+    <button
+      type="button"
+      className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-primary/20 text-heading-md leading-none text-primary"
+    >
+      {initial}
+    </button>
   );
 }
