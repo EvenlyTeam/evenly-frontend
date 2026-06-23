@@ -1,0 +1,1 @@
+export { GroupStyleWrapper } from './GroupStyleWrapper';
