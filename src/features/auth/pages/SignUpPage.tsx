@@ -1,4 +1,4 @@
-import { Desktop, Mobile } from '@/components';
+import { Desktop } from '@/components';
 
 import {
   AuthBrandPanel,
@@ -10,20 +10,14 @@ export function SignUpPage() {
   return (
     <AuthStyleWrapper>
       <Desktop>
-        <AuthStyleWrapper.D.BrandPanel>
+        <AuthStyleWrapper.BrandPanel>
           <AuthBrandPanel />
-        </AuthStyleWrapper.D.BrandPanel>
-
-        <AuthStyleWrapper.D.FormPanel>
-          <AuthSignUpFormPanel />
-        </AuthStyleWrapper.D.FormPanel>
+        </AuthStyleWrapper.BrandPanel>
       </Desktop>
 
-      <Mobile>
-        <AuthStyleWrapper.M.FormPanel>
-          <AuthSignUpFormPanel />
-        </AuthStyleWrapper.M.FormPanel>
-      </Mobile>
+      <AuthStyleWrapper.FormPanel>
+        <AuthSignUpFormPanel />
+      </AuthStyleWrapper.FormPanel>
     </AuthStyleWrapper>
   );
 }
