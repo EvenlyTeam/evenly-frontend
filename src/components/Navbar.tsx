@@ -2,13 +2,13 @@
 
 import { type PropsWithChildren } from 'react';
 
-import { NavbarContext } from '@/hooks/useNavbarContext';
+import { NavbarContext, useNavbarContext } from '@/hooks/useNavbarContext';
 
 interface NavbarProps {
   isDesktop: boolean;
 }
 
-export const Navbar = Object.assign(Base);
+export const Navbar = Object.assign(Base, { Logo });
 
 function Base({ isDesktop, children }: PropsWithChildren<NavbarProps>) {
   return (
@@ -19,5 +19,18 @@ function Base({ isDesktop, children }: PropsWithChildren<NavbarProps>) {
         {children}
       </div>
     </NavbarContext.Provider>
+  );
+}
+
+function Logo() {
+  const { isDesktop } = useNavbarContext();
+
+  return (
+    <div
+      // eslint-disable-next-line tailwindcss/no-unnecessary-arbitrary-value
+      className={`leading-none font-semibold text-primary ${isDesktop ? 'text-[22px]' : 'text-[20px]'}`}
+    >
+      evenly
+    </div>
   );
 }
