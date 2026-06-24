@@ -1,7 +1,7 @@
 import { Navbar } from '@/components';
 
 import ChevronRight from '../assets/icons/chevron-right.svg?react';
-import { GroupStyleWrapper } from '../components';
+import { GroupListGrid, GroupStyleWrapper } from '../components';
 
 export function GroupListPage() {
   const items = [
@@ -27,7 +27,7 @@ export function GroupListPage() {
           내 모임
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <GroupListGrid>
           {items.map((item) => (
             <div key={item.id}>
               <div className="cursor-pointer rounded-card bg-surface p-5 shadow-card">
@@ -57,7 +57,7 @@ export function GroupListPage() {
               </div>
             </div>
           ))}
-        </div>
+        </GroupListGrid>
       </GroupStyleWrapper.Body>
     </GroupStyleWrapper>
   );
