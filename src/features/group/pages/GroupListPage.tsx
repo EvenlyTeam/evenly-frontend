@@ -1,5 +1,6 @@
 import { Navbar } from '@/components';
 
+import ChevronRight from '../assets/icons/chevron-right.svg?react';
 import { GroupStyleWrapper } from '../components';
 
 export function GroupListPage() {
@@ -28,7 +29,33 @@ export function GroupListPage() {
 
         <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div key={item.id}>{item.id}</div>
+            <div key={item.id}>
+              <div className="cursor-pointer rounded-card bg-surface p-5 shadow-card">
+                <div className="flex justify-between">참석자</div>
+
+                <div className="mt-3.5 text-body-sm font-semibold text-foreground lg:mt-4.5 lg:text-body-md">
+                  그룹 이름
+                </div>
+
+                <div className="mt-1 text-body-sm text-subtle-foreground lg:mt-1.25">
+                  4명 · 2026.06.24
+                </div>
+
+                <hr className="mt-4.5 border-border-subtle" />
+
+                <div className="mt-3.5 flex justify-between">
+                  <div className="rounded-badge bg-primary/12 px-2 py-1.25 text-label leading-none text-primary">
+                    진행 중
+                  </div>
+
+                  <div className="rounded-badge bg-positive-surface px-2 py-1.25 text-label leading-none text-settled">
+                    정산 완료 (for Test)
+                  </div>
+
+                  <ChevronRight className="text-subtle-foreground" />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </GroupStyleWrapper.Body>
