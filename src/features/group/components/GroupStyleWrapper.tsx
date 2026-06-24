@@ -28,5 +28,9 @@ function Navbar({ children }: PropsWithChildren) {
 
 function Body({ children }: PropsWithChildren) {
   Guard.useGuard('Body');
-  return <div className="w-full flex-1 p-4 lg:px-16 lg:py-8">{children}</div>;
+  return (
+    <div className="flex-1 p-4 lg:px-16 lg:py-8">
+      <div className="mx-auto w-full max-w-content">{children}</div>
+    </div>
+  );
 }
