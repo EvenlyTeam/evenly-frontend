@@ -36,7 +36,7 @@ function UserMenu({ userName }: { userName: string }) {
   return (
     <button
       type="button"
-      className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-primary/20 text-heading-md leading-none text-primary"
+      className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-primary/12 text-heading-md leading-none text-primary"
     >
       {initial}
     </button>
