@@ -2,40 +2,35 @@
 
 import { type PropsWithChildren } from 'react';
 
-import { NavbarContext, useNavbarContext } from '@/hooks/useNavbarContext';
-
-interface NavbarProps {
-  isDesktop: boolean;
-}
+import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 export const Navbar = Object.assign(Base, { Logo, UserMenu });
 
-function Base({ isDesktop, children }: PropsWithChildren<NavbarProps>) {
+const Guard = createCompoundGuard('Navbar');
+
+function Base({ children }: PropsWithChildren) {
   return (
-    <NavbarContext.Provider value={{ isDesktop }}>
-      <nav
-        className={`flex w-full items-center justify-between border-b border-border-subtle bg-surface ${isDesktop ? 'h-16 px-7' : 'h-14 px-4'}`}
-      >
+    <Guard.Provider>
+      <nav className="flex h-14 w-full items-center justify-between border-b border-border-subtle bg-surface px-4 lg:h-16 lg:px-7">
         {children}
       </nav>
-    </NavbarContext.Provider>
+    </Guard.Provider>
   );
 }
 
 function Logo() {
-  const { isDesktop } = useNavbarContext();
+  Guard.useGuard('Logo');
 
   return (
-    <div
-      // eslint-disable-next-line tailwindcss/no-unnecessary-arbitrary-value
-      className={`leading-none font-semibold text-primary ${isDesktop ? 'text-[22px]' : 'text-[20px]'}`}
-    >
+    <div className="text-heading-md font-semibold text-primary lg:text-heading-lg">
       evenly
     </div>
   );
 }
 
 function UserMenu({ userName }: { userName: string }) {
+  Guard.useGuard('UserMenu');
+
   const initial = userName.charAt(0).toUpperCase();
 
   return (
