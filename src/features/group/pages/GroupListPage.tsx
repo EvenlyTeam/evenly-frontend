@@ -4,6 +4,7 @@ import ChevronRight from '../assets/icons/chevron-right.svg?react';
 import {
   GroupCard,
   GroupCreateCard,
+  GroupCreateFab,
   GroupListGrid,
   GroupStyleWrapper,
 } from '../components';
@@ -69,6 +70,10 @@ export function GroupListPage() {
             <Desktop>
               <GroupCreateCard />
             </Desktop>
+
+            <Mobile>
+              <GroupCreateFab />
+            </Mobile>
           </>
         </GroupListGrid>
       </GroupStyleWrapper.Body>
