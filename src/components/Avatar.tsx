@@ -1,8 +1,7 @@
 import { cn } from '@/utils/cn';
 
 const sizeStyles = {
-  sm: 'size-[26px] text-[11px]',
-  md: 'size-7 text-[12px]',
+  sm: 'size-7 text-[12px]',
   lg: 'size-9 text-heading-md',
 } as const;
 

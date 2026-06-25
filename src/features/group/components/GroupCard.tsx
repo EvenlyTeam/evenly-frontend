@@ -2,6 +2,8 @@
 
 import type { PropsWithChildren } from 'react';
 
+import { Avatar } from '@/components/Avatar';
+import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 export const GroupCard = Object.assign(Base, {
@@ -30,6 +32,8 @@ function Title({
   title: string;
   className?: string;
 }) {
+  Guard.useGuard('Title');
+
   return (
     <div
       className={`text-body-sm font-semibold text-foreground lg:text-body-md ${className}`}
@@ -45,12 +49,14 @@ function Title({
 function Detail({
   attendeeCount,
   date,
-  className,
+  className = '',
 }: {
   attendeeCount: number;
   date: string;
   className?: string;
 }) {
+  Guard.useGuard('Detail');
+
   return (
     <div className={`text-body-sm text-subtle-foreground ${className}`}>
       {`${attendeeCount}명 · ${date}`}
@@ -64,6 +70,8 @@ const statusConfig = {
 } as const;
 
 function Status({ status }: { status: 'ongoing' | 'settled' }) {
+  Guard.useGuard('Status');
+
   const { label, tone } = statusConfig[status];
 
   return (
@@ -79,6 +87,37 @@ function Status({ status }: { status: 'ongoing' | 'settled' }) {
   );
 }
 
-function Attendees() {
-  return <div>참석자</div>;
+function Attendees({ names }: { names: string[] }) {
+  Guard.useGuard('Attendees');
+
+  const MAX_VISIBLE = 3;
+  const visible = names.slice(0, MAX_VISIBLE);
+  const extra = names.length - visible.length;
+
+  const avatarStackStyles =
+    'ring-2 ring-surface -ml-2 first:ml-0 lg:size-7 lg:text-[12px]';
+
+  return (
+    <div className="flex items-center">
+      {visible.map((name, i) => (
+        <Avatar
+          key={i}
+          size="sm"
+          label={name.charAt(0)}
+          className={avatarStackStyles}
+        />
+      ))}
+
+      {extra > 0 && (
+        <Avatar
+          size="sm"
+          label={`+${extra}`}
+          className={cn(
+            avatarStackStyles,
+            'bg-surface-muted text-subtle-foreground',
+          )}
+        />
+      )}
+    </div>
+  );
 }

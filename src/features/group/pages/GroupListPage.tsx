@@ -13,6 +13,9 @@ export function GroupListPage() {
     { id: 6 },
     { id: 7 },
   ];
+
+  const attendees = ['김OO', '박OO', '남OO', '이OO', '정OO'];
+
   return (
     <GroupStyleWrapper>
       <GroupStyleWrapper.Navbar>
@@ -31,7 +34,7 @@ export function GroupListPage() {
           {items.map((item) => (
             <GroupCard key={item.id}>
               <div className="flex justify-between">
-                <GroupCard.Attendees />
+                <GroupCard.Attendees names={attendees} />
 
                 <Mobile>
                   <GroupCard.Status status="ongoing" />
