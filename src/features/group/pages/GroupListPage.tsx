@@ -1,7 +1,12 @@
 import { Desktop, Mobile, Navbar } from '@/components';
 
 import ChevronRight from '../assets/icons/chevron-right.svg?react';
-import { GroupCard, GroupListGrid, GroupStyleWrapper } from '../components';
+import {
+  GroupCard,
+  GroupCreateCard,
+  GroupListGrid,
+  GroupStyleWrapper,
+} from '../components';
 
 export function GroupListPage() {
   const items = [
@@ -31,34 +36,40 @@ export function GroupListPage() {
         </div>
 
         <GroupListGrid>
-          {items.map((item) => (
-            <GroupCard key={item.id}>
-              <div className="flex justify-between">
-                <GroupCard.Attendees names={attendees} />
+          <>
+            {items.map((item) => (
+              <GroupCard key={item.id}>
+                <div className="flex justify-between">
+                  <GroupCard.Attendees names={attendees} />
 
-                <Mobile>
-                  <GroupCard.Status status="ongoing" />
-                </Mobile>
-              </div>
-
-              <GroupCard.Title title="그룹 이름" className="mt-3.5" />
-
-              <GroupCard.Detail
-                attendeeCount={4}
-                date={'2026.06.24'}
-                className="mt-1 lg:mt-1.25"
-              />
-
-              <Desktop>
-                <hr className="mt-4.5 border-border-subtle" />
-
-                <div className="mt-3.5 flex justify-between">
-                  <GroupCard.Status status="ongoing" />
-                  <ChevronRight className="text-subtle-foreground" />
+                  <Mobile>
+                    <GroupCard.Status status="ongoing" />
+                  </Mobile>
                 </div>
-              </Desktop>
-            </GroupCard>
-          ))}
+
+                <GroupCard.Title title="그룹 이름" className="mt-3.5" />
+
+                <GroupCard.Detail
+                  attendeeCount={4}
+                  date={'2026.06.24'}
+                  className="mt-1 lg:mt-1.25"
+                />
+
+                <Desktop>
+                  <hr className="mt-4.5 border-border-subtle" />
+
+                  <div className="mt-3.5 flex justify-between">
+                    <GroupCard.Status status="ongoing" />
+                    <ChevronRight className="text-subtle-foreground" />
+                  </div>
+                </Desktop>
+              </GroupCard>
+            ))}
+
+            <Desktop>
+              <GroupCreateCard />
+            </Desktop>
+          </>
         </GroupListGrid>
       </GroupStyleWrapper.Body>
     </GroupStyleWrapper>
