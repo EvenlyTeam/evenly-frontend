@@ -71,12 +71,12 @@ function BackButton({
   );
 }
 
-function Title({ children }: PropsWithChildren) {
+function Title({ title }: { title: string }) {
   Guard.useGuard('Title');
 
   return (
     <h1 className="min-w-0 flex-1 truncate text-heading-md font-semibold text-foreground lg:text-heading-lg">
-      {children}
+      {title}
     </h1>
   );
 }
