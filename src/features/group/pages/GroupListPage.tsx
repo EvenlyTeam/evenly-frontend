@@ -7,8 +7,12 @@ export function GroupListPage() {
     <GroupStyleWrapper>
       <GroupStyleWrapper.Navbar>
         <Navbar>
-          <Navbar.Logo />
-          <Navbar.UserMenu userName={'남수민'} />
+          <Navbar.Start>
+            <Navbar.Logo />
+          </Navbar.Start>
+          <Navbar.End>
+            <Navbar.UserMenu userName={'남수민'} />
+          </Navbar.End>
         </Navbar>
       </GroupStyleWrapper.Navbar>
 
