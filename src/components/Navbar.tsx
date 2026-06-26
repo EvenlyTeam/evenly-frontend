@@ -75,7 +75,7 @@ function Title({ title }: { title: string }) {
   Guard.useGuard('Title');
 
   return (
-    <h1 className="min-w-0 flex-1 truncate text-heading-md font-semibold text-foreground lg:text-heading-lg">
+    <h1 className="min-w-0 flex-1 truncate text-heading-md leading-none font-semibold text-foreground lg:text-heading-lg">
       {title}
     </h1>
   );
