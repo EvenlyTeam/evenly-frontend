@@ -43,7 +43,7 @@ function Create({ children }: PropsWithChildren) {
 
   return (
     <div className="flex-1 p-4 pt-5.5 lg:px-3.5 lg:py-12">
-      <div className="mx-auto w-full max-w-content">{children}</div>
+      <div className="mx-auto w-fit">{children}</div>
     </div>
   );
 }
