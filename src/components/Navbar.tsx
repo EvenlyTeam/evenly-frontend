@@ -50,6 +50,37 @@ function Logo() {
   );
 }
 
+function BackButton({
+  onClick,
+  label = '뒤로 가기',
+}: {
+  onClick?: () => void;
+  label?: string;
+}) {
+  Guard.useGuard('BackButton');
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      className="flex shrink-0 items-center justify-center text-foreground"
+    >
+      <ChevronLeftIcon aria-hidden className="size-5.5" />
+    </button>
+  );
+}
+
+function Title({ children }: PropsWithChildren) {
+  Guard.useGuard('Title');
+
+  return (
+    <h1 className="min-w-0 flex-1 truncate text-heading-md font-semibold text-foreground lg:text-heading-lg">
+      {children}
+    </h1>
+  );
+}
+
 function UserMenu({ userName }: { userName: string }) {
   Guard.useGuard('UserMenu');
 
