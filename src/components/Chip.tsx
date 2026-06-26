@@ -5,14 +5,12 @@ import CloseIcon from '@/assets/icons/close.svg?react';
 interface ChipProps {
   variant?: 'default' | 'highlight';
   onRemove?: () => void;
-  removeLabel?: string;
 }
 
 export function Chip({
   children,
   variant = 'default',
   onRemove,
-  removeLabel,
 }: PropsWithChildren<ChipProps>) {
   const variantClass =
     variant === 'highlight'
@@ -30,8 +28,8 @@ export function Chip({
         <button
           type="button"
           onClick={onRemove}
-          aria-label={removeLabel}
-          className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-border-subtle text-subtle-foreground"
+          aria-label={`${children} 삭제`}
+          className="flex size-4.5 shrink-0 cursor-pointer items-center justify-center rounded-full bg-border-subtle text-subtle-foreground"
         >
           <CloseIcon aria-hidden className="size-2.75" />
         </button>

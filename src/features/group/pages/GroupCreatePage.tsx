@@ -1,6 +1,6 @@
 import { Navbar } from '@/components';
 
-import { GroupStyleWrapper } from '../components';
+import { GroupCreateForm, GroupStyleWrapper } from '../components';
 
 export function GroupCreatePage() {
   return (
@@ -15,7 +15,9 @@ export function GroupCreatePage() {
           </Navbar>
         </GroupStyleWrapper.Navbar>
 
-        <GroupStyleWrapper.Create></GroupStyleWrapper.Create>
+        <GroupStyleWrapper.Create>
+          <GroupCreateForm />
+        </GroupStyleWrapper.Create>
       </GroupStyleWrapper>
     </>
   );
