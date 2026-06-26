@@ -1,0 +1,90 @@
+/* eslint-disable react-refresh/only-export-components */
+
+import type { PropsWithChildren } from 'react';
+
+import { Desktop, Mobile } from '@/components';
+import { createCompoundGuard } from '@/utils/createCompoundGuard';
+
+import ChevronRight from '../assets/icons/chevron-right.svg?react';
+import { GroupCard } from './GroupCard';
+import { GroupCreateCard } from './GroupCreateCard';
+import { GroupCreateFab } from './GroupCreateFab';
+
+// @TODO: 임시 item 선언 제거
+const items = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+  { id: 7 },
+];
+const attendees = ['김OO', '박OO', '남OO', '이OO', '정OO'];
+
+export const GroupList = Object.assign(Base, { Title, Grid });
+
+const Guard = createCompoundGuard('GroupList');
+
+function Base({ children }: PropsWithChildren) {
+  return (
+    <Guard.Provider>
+      <div className="flex flex-col gap-3 lg:gap-5">{children}</div>
+    </Guard.Provider>
+  );
+}
+
+function Title({ title }: { title: string }) {
+  Guard.useGuard('Title');
+
+  return (
+    <div className="text-heading-md text-foreground lg:text-heading-lg">
+      {title}
+    </div>
+  );
+}
+
+function Grid() {
+  Guard.useGuard('Grid');
+
+  return (
+    <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {items.map((item) => (
+        <GroupCard key={item.id}>
+          <div className="flex justify-between">
+            <GroupCard.Attendees names={attendees} />
+
+            <Mobile>
+              <GroupCard.Status status="ongoing" />
+            </Mobile>
+          </div>
+
+          <GroupCard.Title title="그룹 이름" className="mt-3.5" />
+
+          <GroupCard.Detail
+            attendeeCount={4}
+            date={'2026.06.24'}
+            className="mt-1 lg:mt-1.25"
+          />
+
+          <Desktop>
+            <hr className="mt-4.5 border-border-subtle" />
+
+            <div className="mt-3.5 flex justify-between">
+              <GroupCard.Status status="ongoing" />
+              <ChevronRight className="text-subtle-foreground" />
+            </div>
+          </Desktop>
+        </GroupCard>
+      ))}
+
+      <Desktop>
+        <GroupCreateCard />
+      </Desktop>
+
+      <Mobile>
+        <GroupCreateFab />
+      </Mobile>
+    </div>
+  );
+}
