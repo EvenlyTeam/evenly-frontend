@@ -2,7 +2,7 @@
 
 import type { PropsWithChildren } from 'react';
 
-import { Avatar } from '@/components/Avatar';
+import { Avatar } from '@/components';
 import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 

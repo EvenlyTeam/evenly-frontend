@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { SignInPage, SignUpPage } from './features/auth/pages';
-import { GroupListPage } from './features/group/pages';
+import { GroupCreatePage, GroupListPage } from './features/group/pages';
 
 function App() {
   /* @TODO: 임시 페이지 전환 Flag */
@@ -24,11 +24,16 @@ function App() {
             page={'GroupList'}
             onPageChange={() => setPage('group-list')}
           />
+          <GoToPageButton
+            page={'GroupCreate'}
+            onPageChange={() => setPage('group-create')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
       {page === 'register' && <SignUpPage />}
       {page === 'group-list' && <GroupListPage />}
+      {page === 'group-create' && <GroupCreatePage />}
     </div>
   );
 }
