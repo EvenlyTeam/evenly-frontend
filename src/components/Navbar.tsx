@@ -2,7 +2,7 @@
 
 import { type PropsWithChildren } from 'react';
 
-import ChevronLeftIcon from '@/assets/icons/chevron-left.svg?react';
+import ChevronLeftIcon from '@/assets/chevron-left.svg?react';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 import { Avatar } from './Avatar';

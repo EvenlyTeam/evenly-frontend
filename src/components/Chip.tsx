@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 
-import CloseIcon from '@/assets/icons/close.svg?react';
+import CloseIcon from '@/assets/close.svg?react';
 
 interface ChipProps {
   variant?: 'default' | 'highlight';

@@ -5,7 +5,7 @@ import type { PropsWithChildren } from 'react';
 import { Desktop, Mobile } from '@/components';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-import ChevronRight from '../assets/icons/chevron-right.svg?react';
+import ChevronRight from '../assets/chevron-right.svg?react';
 import { GroupCard } from './GroupCard';
 import { GroupCreateCard } from './GroupCreateCard';
 import { GroupCreateFab } from './GroupCreateFab';
