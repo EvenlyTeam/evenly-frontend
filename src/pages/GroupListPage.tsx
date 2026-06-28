@@ -1,6 +1,5 @@
 import { Navbar } from '@/components';
-
-import { GroupList, GroupStyleWrapper } from '../components';
+import { GroupList, GroupStyleWrapper } from '@/features/group/components';
 
 export function GroupListPage() {
   return (

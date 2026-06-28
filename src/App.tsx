@@ -1,7 +1,11 @@
 import { useState } from 'react';
 
-import { SignInPage, SignUpPage } from './features/auth/pages';
-import { GroupCreatePage, GroupListPage } from './features/group/pages';
+import {
+  GroupCreatePage,
+  GroupListPage,
+  SignInPage,
+  SignUpPage,
+} from '@/pages';
 
 function App() {
   /* @TODO: 임시 페이지 전환 Flag */

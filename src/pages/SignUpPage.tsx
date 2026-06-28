@@ -1,12 +1,11 @@
 import { Desktop } from '@/components';
-
 import {
   AuthBrandPanel,
-  AuthSignInFormPanel,
+  AuthSignUpFormPanel,
   AuthStyleWrapper,
-} from '../components';
+} from '@/features/auth/components';
 
-export function SignInPage() {
+export function SignUpPage() {
   return (
     <AuthStyleWrapper>
       <Desktop>
@@ -16,7 +15,7 @@ export function SignInPage() {
       </Desktop>
 
       <AuthStyleWrapper.FormPanel>
-        <AuthSignInFormPanel />
+        <AuthSignUpFormPanel />
       </AuthStyleWrapper.FormPanel>
     </AuthStyleWrapper>
   );
