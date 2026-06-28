@@ -1,6 +1,8 @@
 import { Navbar } from '@/components';
-
-import { GroupCreateForm, GroupStyleWrapper } from '../components';
+import {
+  GroupCreateForm,
+  GroupStyleWrapper,
+} from '@/features/group/components';
 
 export function GroupCreatePage() {
   return (

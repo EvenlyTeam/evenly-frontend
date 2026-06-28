@@ -1,19 +1,20 @@
-import { Desktop } from '@/components';
-
 import {
   AuthBrandPanel,
   AuthSignUpFormPanel,
   AuthStyleWrapper,
-} from '../components';
+} from '@/features/auth/components';
+import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 export function SignUpPage() {
+  const isDesktop = useIsDesktop();
+
   return (
     <AuthStyleWrapper>
-      <Desktop>
+      {isDesktop && (
         <AuthStyleWrapper.BrandPanel>
           <AuthBrandPanel />
         </AuthStyleWrapper.BrandPanel>
-      </Desktop>
+      )}
 
       <AuthStyleWrapper.FormPanel>
         <AuthSignUpFormPanel />

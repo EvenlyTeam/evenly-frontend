@@ -1,6 +1,5 @@
 import { Navbar } from '@/components';
-
-import { GroupList, GroupStyleWrapper } from '../components';
+import { GroupList, GroupStyleWrapper } from '@/features/group/components';
 
 export function GroupListPage() {
   return (
@@ -17,10 +16,7 @@ export function GroupListPage() {
       </GroupStyleWrapper.Navbar>
 
       <GroupStyleWrapper.List>
-        <GroupList>
-          <GroupList.Title title="내 모임" />
-          <GroupList.Grid />
-        </GroupList>
+        <GroupList title="내 모임" />
       </GroupStyleWrapper.List>
     </GroupStyleWrapper>
   );

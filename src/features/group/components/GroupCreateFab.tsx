@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn';
 
-import Plus from '../assets/icons/plus.svg?react';
+import Plus from '../assets/plus.svg?react';
 
 export function GroupCreateFab() {
   return (
