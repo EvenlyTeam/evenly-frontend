@@ -1,4 +1,4 @@
-import CheckBadge from '../assets/icons/check-badge.svg?react';
+import CheckBadge from '../assets/check-badge.svg?react';
 
 export function AuthBrandPanel() {
   return (

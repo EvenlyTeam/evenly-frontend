@@ -18,12 +18,16 @@ function Base({ children }: PropsWithChildren) {
 
 function BrandPanel({ children }: PropsWithChildren) {
   Guard.useGuard('BrandPanel');
+
   return <div className="flex-2">{children}</div>;
 }
 
 function FormPanel({ children }: PropsWithChildren) {
   Guard.useGuard('FormPanel');
+
   return (
-    <div className="my-auto max-w-140 flex-1 px-12 lg:px-6">{children}</div>
+    <div className="mt-20 max-w-140 flex-1 px-12 lg:my-auto lg:px-6">
+      {children}
+    </div>
   );
 }
