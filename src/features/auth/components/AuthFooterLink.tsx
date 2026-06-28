@@ -4,7 +4,11 @@ interface AuthFooterLinkProps {
   href: string;
 }
 
-const AuthFooterLink = ({ message, linkText, href }: AuthFooterLinkProps) => {
+export function AuthFooterLink({
+  message,
+  linkText,
+  href,
+}: AuthFooterLinkProps) {
   return (
     <p className="mt-5.5 text-center text-body-sm text-muted-foreground">
       {message}
@@ -16,6 +20,4 @@ const AuthFooterLink = ({ message, linkText, href }: AuthFooterLinkProps) => {
       </a>
     </p>
   );
-};
-
-export default AuthFooterLink;
+}

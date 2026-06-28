@@ -5,7 +5,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 
-const AuthInput = ({ label, id, className, ...props }: InputProps) => {
+export function AuthInput({ label, id, className, ...props }: InputProps) {
   return (
     <div className="space-y-2">
       <label htmlFor={id} className="block text-label text-muted-foreground">
@@ -18,6 +18,4 @@ const AuthInput = ({ label, id, className, ...props }: InputProps) => {
       />
     </div>
   );
-};
-
-export default AuthInput;
+}

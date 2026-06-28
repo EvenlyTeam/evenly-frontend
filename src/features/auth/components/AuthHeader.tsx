@@ -6,11 +6,11 @@ interface AuthHeaderProps {
   subtitle: string;
 }
 
-const AuthHeader = ({
+export function AuthHeader({
   viewType,
   title = 'evenly',
   subtitle,
-}: AuthHeaderProps) => {
+}: AuthHeaderProps) {
   return (
     <header className={clsx({ 'text-center': viewType === 'mobile' })}>
       <p
@@ -31,6 +31,4 @@ const AuthHeader = ({
       </p>{' '}
     </header>
   );
-};
-
-export default AuthHeader;
+}
