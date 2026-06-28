@@ -16,10 +16,7 @@ export function GroupListPage() {
       </GroupStyleWrapper.Navbar>
 
       <GroupStyleWrapper.List>
-        <GroupList>
-          <GroupList.Title title="내 모임" />
-          <GroupList.Grid />
-        </GroupList>
+        <GroupList title="내 모임" />
       </GroupStyleWrapper.List>
     </GroupStyleWrapper>
   );

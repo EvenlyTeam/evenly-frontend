@@ -1,12 +1,7 @@
-/* eslint-disable react-refresh/only-export-components */
-
-import type { PropsWithChildren } from 'react';
-
-import { Desktop, Mobile } from '@/components';
-import { createCompoundGuard } from '@/utils/createCompoundGuard';
+import { GroupCard } from '@/components/GroupCard';
+import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 import ChevronRight from '../assets/chevron-right.svg?react';
-import { GroupCard } from './GroupCard';
 import { GroupCreateCard } from './GroupCreateCard';
 import { GroupCreateFab } from './GroupCreateFab';
 
@@ -22,69 +17,47 @@ const items = [
 ];
 const attendees = ['김OO', '박OO', '남OO', '이OO', '정OO'];
 
-export const GroupList = Object.assign(Base, { Title, Grid });
-
-const Guard = createCompoundGuard('GroupList');
-
-function Base({ children }: PropsWithChildren) {
-  return (
-    <Guard.Provider>
-      <div className="flex flex-col gap-3 lg:gap-5">{children}</div>
-    </Guard.Provider>
-  );
-}
-
-function Title({ title }: { title: string }) {
-  Guard.useGuard('Title');
+export function GroupList({ title }: { title: string }) {
+  const isDesktop = useIsDesktop();
 
   return (
-    <div className="text-heading-md text-foreground lg:text-heading-lg">
-      {title}
-    </div>
-  );
-}
+    <div className="flex flex-col gap-3 lg:gap-5">
+      <div className="text-heading-md text-foreground lg:text-heading-lg">
+        {title}
+      </div>
 
-function Grid() {
-  Guard.useGuard('Grid');
+      <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+        {items.map((item) => (
+          <GroupCard key={item.id}>
+            <div className="flex justify-between">
+              <GroupCard.Attendees names={attendees} />
 
-  return (
-    <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-      {items.map((item) => (
-        <GroupCard key={item.id}>
-          <div className="flex justify-between">
-            <GroupCard.Attendees names={attendees} />
-
-            <Mobile>
-              <GroupCard.Status status="ongoing" />
-            </Mobile>
-          </div>
-
-          <GroupCard.Title title="그룹 이름" className="mt-3.5" />
-
-          <GroupCard.Detail
-            attendeeCount={4}
-            date={'2026.06.24'}
-            className="mt-1 lg:mt-1.25"
-          />
-
-          <Desktop>
-            <hr className="mt-4.5 border-border-subtle" />
-
-            <div className="mt-3.5 flex justify-between">
-              <GroupCard.Status status="ongoing" />
-              <ChevronRight className="text-subtle-foreground" />
+              {!isDesktop && <GroupCard.Status status="ongoing" />}
             </div>
-          </Desktop>
-        </GroupCard>
-      ))}
 
-      <Desktop>
-        <GroupCreateCard />
-      </Desktop>
+            <GroupCard.Title title="그룹 이름" className="mt-3.5" />
 
-      <Mobile>
-        <GroupCreateFab />
-      </Mobile>
+            <GroupCard.Detail
+              attendeeCount={4}
+              date={'2026.06.24'}
+              className="mt-1 lg:mt-1.25"
+            />
+
+            {isDesktop && (
+              <>
+                <hr className="mt-4.5 border-border-subtle" />
+
+                <div className="mt-3.5 flex justify-between">
+                  <GroupCard.Status status="ongoing" />
+                  <ChevronRight className="text-subtle-foreground" />
+                </div>
+              </>
+            )}
+          </GroupCard>
+        ))}
+
+        {isDesktop ? <GroupCreateCard /> : <GroupCreateFab />}
+      </div>
     </div>
   );
 }

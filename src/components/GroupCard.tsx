@@ -44,7 +44,7 @@ function Title({
 }
 
 /**
- * @TODO: 날짜 문자열 오류 컴파일 타임 오류 대책 필요
+ * @TODO: 날짜 문자열 컴파일 타임 오류 대책 필요
  */
 function Detail({
   attendeeCount,
