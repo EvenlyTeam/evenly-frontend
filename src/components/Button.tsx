@@ -1,7 +1,7 @@
 import { type ButtonHTMLAttributes } from 'react';
 
-type ButtonVariant = 'primary';
-type ButtonSize = 'md' | 'lg';
+type ButtonVariant = 'primary' | 'secondary';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -14,10 +14,13 @@ const baseClass =
 const variantClass: Record<ButtonVariant, string> = {
   primary:
     'bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-hover',
+  secondary:
+    'border border-border bg-surface text-muted-foreground hover:bg-surface-muted',
 };
 
 const sizeClass: Record<ButtonSize, string> = {
-  md: 'h-12 px-5 text-body-lg font-semibold',
+  sm: 'h-9 px-4 text-body-md font-semibold leading-none',
+  md: 'h-12 px-5 text-body-lg font-semibold leading-none',
   lg: 'h-13 px-6 text-heading-sm leading-none',
 };
 
