@@ -4,8 +4,8 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('GroupStyleWrapper');
 
-export function Navbar({ children }: PropsWithChildren) {
-  Guard.useGuard('Navbar');
+export function Summary({ children }: PropsWithChildren) {
+  Guard.useGuard('Summary');
 
-  return <div className="sticky top-0 z-10 w-full">{children}</div>;
+  return <aside className="w-full lg:w-[380px] lg:shrink-0">{children}</aside>;
 }

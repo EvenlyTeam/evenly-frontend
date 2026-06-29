@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import {
   GroupCreatePage,
+  GroupDetailPage,
   GroupListPage,
   SignInPage,
   SignUpPage,
@@ -32,12 +33,17 @@ function App() {
             page={'GroupCreate'}
             onPageChange={() => setPage('group-create')}
           />
+          <GoToPageButton
+            page={'GroupDetail'}
+            onPageChange={() => setPage('group-detail')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
       {page === 'register' && <SignUpPage />}
       {page === 'group-list' && <GroupListPage />}
       {page === 'group-create' && <GroupCreatePage />}
+      {page === 'group-detail' && <GroupDetailPage />}
     </div>
   );
 }
