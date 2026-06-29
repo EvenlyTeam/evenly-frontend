@@ -1,7 +1,7 @@
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-import EditIcon from '../assets/edit.svg?react';
-import TrashIcon from '../assets/trash.svg?react';
+import EditIcon from '../../assets/edit.svg?react';
+import TrashIcon from '../../assets/trash.svg?react';
 
 const Guard = createCompoundGuard('ExpenseListItem');
 
