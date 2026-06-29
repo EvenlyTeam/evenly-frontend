@@ -1,11 +1,25 @@
+import { useState } from 'react';
+
+import { Tabs } from '@/components';
 import {
   BalanceSummary,
+  ExpenseCreateFab,
   ExpenseList,
   GroupDetailNavbar,
   GroupStyleWrapper,
 } from '@/features/group/components';
+import { cn } from '@/utils/cn';
+
+type DetailTab = 'expenses' | 'balance';
+
+const TABS = [
+  { value: 'expenses', label: '지출 목록' },
+  { value: 'balance', label: '순잔액' },
+] as const satisfies ReadonlyArray<{ value: DetailTab; label: string }>;
 
 export function GroupDetailPage() {
+  const [tab, setTab] = useState<DetailTab>('expenses');
+
   return (
     <GroupStyleWrapper>
       <GroupStyleWrapper.Navbar>
@@ -18,14 +32,27 @@ export function GroupDetailPage() {
       </GroupStyleWrapper.Navbar>
 
       <GroupStyleWrapper.Detail>
-        <GroupStyleWrapper.Expenses>
+        <Tabs
+          className="w-full lg:hidden"
+          value={tab}
+          onChange={setTab}
+          tabs={TABS}
+        />
+
+        <GroupStyleWrapper.Expenses
+          className={cn(tab !== 'expenses' && 'max-lg:hidden')}
+        >
           <ExpenseList />
         </GroupStyleWrapper.Expenses>
 
-        <GroupStyleWrapper.Summary>
+        <GroupStyleWrapper.Summary
+          className={cn(tab !== 'balance' && 'max-lg:hidden')}
+        >
           <BalanceSummary />
         </GroupStyleWrapper.Summary>
       </GroupStyleWrapper.Detail>
+
+      <ExpenseCreateFab />
     </GroupStyleWrapper>
   );
 }
