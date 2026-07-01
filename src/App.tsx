@@ -4,6 +4,7 @@ import {
   GroupCreatePage,
   GroupDetailPage,
   GroupListPage,
+  SettlementPage,
   SignInPage,
   SignUpPage,
 } from '@/pages';
@@ -37,6 +38,10 @@ function App() {
             page={'GroupDetail'}
             onPageChange={() => setPage('group-detail')}
           />
+          <GoToPageButton
+            page={'Settlement'}
+            onPageChange={() => setPage('settlement')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
@@ -44,6 +49,7 @@ function App() {
       {page === 'group-list' && <GroupListPage />}
       {page === 'group-create' && <GroupCreatePage />}
       {page === 'group-detail' && <GroupDetailPage />}
+      {page === 'settlement' && <SettlementPage />}
     </div>
   );
 }
