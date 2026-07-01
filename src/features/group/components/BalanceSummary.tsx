@@ -54,7 +54,7 @@ export function BalanceSummary() {
             key={balance.name}
             name={balance.name}
             amount={balance.amount}
-            percent={(Math.abs(balance.amount) / maxAbs) * 100}
+            maxAbs={maxAbs}
           />
         ))}
       </div>
