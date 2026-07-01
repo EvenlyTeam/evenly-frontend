@@ -2,10 +2,10 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('GroupCard');
 
-export /**
+/**
  * @TODO: 날짜 문자열 포맷 미정
  */
-function Detail({
+export function Detail({
   attendeeCount,
   date,
   className = '',
