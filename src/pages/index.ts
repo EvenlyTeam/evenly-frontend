@@ -2,5 +2,6 @@ export { GroupCreatePage } from './GroupCreatePage';
 export { GroupDetailPage } from './GroupDetailPage';
 export { GroupListPage } from './GroupListPage';
 export { SettlementPage } from './SettlementPage';
+export { SharedSettlementPage } from './SharedSettlementPage';
 export { SignInPage } from './SignInPage';
 export { SignUpPage } from './SignUpPage';
