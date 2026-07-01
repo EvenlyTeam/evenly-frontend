@@ -1,5 +1,7 @@
 export { Amount } from './Amount';
 export { Avatar } from './Avatar';
+export { BalanceBar } from './BalanceBar';
+export { BalanceSummary } from './BalanceSummary';
 export { Button } from './Button';
 export { Chip } from './Chip.tsx';
 export { Fab } from './Fab';

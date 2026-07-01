@@ -1,7 +1,8 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
-import { Amount } from '@/components';
 import { cn } from '@/utils/cn';
+
+import { Amount } from './Amount';
 
 interface BalanceBarProps {
   name: string;

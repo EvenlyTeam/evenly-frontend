@@ -4,6 +4,8 @@ import {
   GroupCreatePage,
   GroupDetailPage,
   GroupListPage,
+  SettlementPage,
+  SharedSettlementPage,
   SignInPage,
   SignUpPage,
 } from '@/pages';
@@ -37,6 +39,18 @@ function App() {
             page={'GroupDetail'}
             onPageChange={() => setPage('group-detail')}
           />
+          <GoToPageButton
+            page={'Settlement'}
+            onPageChange={() => setPage('settlement')}
+          />
+          <GoToPageButton
+            page={'SharedSettlement'}
+            onPageChange={() => setPage('shared-settlement')}
+          />
+          <GoToPageButton
+            page={'SharedSettlementError'}
+            onPageChange={() => setPage('shared-settlement-error')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
@@ -44,6 +58,9 @@ function App() {
       {page === 'group-list' && <GroupListPage />}
       {page === 'group-create' && <GroupCreatePage />}
       {page === 'group-detail' && <GroupDetailPage />}
+      {page === 'settlement' && <SettlementPage />}
+      {page === 'shared-settlement' && <SharedSettlementPage />}
+      {page === 'shared-settlement-error' && <SharedSettlementPage error />}
     </div>
   );
 }
