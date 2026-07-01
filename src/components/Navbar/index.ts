@@ -1,6 +1,7 @@
 import { BackButton } from './BackButton';
 import { Base } from './Base';
 import { End } from './End';
+import { GroupInfo } from './GroupInfo';
 import { Logo } from './Logo';
 import { Start } from './Start';
 import { Title } from './Title';
@@ -13,4 +14,5 @@ export const Navbar = Object.assign(Base, {
   UserMenu,
   BackButton,
   Title,
+  GroupInfo,
 });

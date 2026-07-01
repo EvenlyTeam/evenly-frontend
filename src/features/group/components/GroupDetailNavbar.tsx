@@ -17,16 +17,9 @@ export function GroupDetailNavbar({
     <Navbar>
       <Navbar.Start>
         <Navbar.BackButton />
+        <Navbar.Title title={name} />
+        <Navbar.GroupInfo attendeeCount={attendeeCount} date={date} />
       </Navbar.Start>
-
-      <div className="min-w-0 flex-1">
-        <h1 className="truncate text-heading-md leading-tight font-semibold text-foreground">
-          {name}
-        </h1>
-        <p className="mt-0.5 text-body-sm text-subtle-foreground">
-          {`${attendeeCount}명 · ${date}`}
-        </p>
-      </div>
 
       <Navbar.End>
         <button
