@@ -2,9 +2,9 @@ import { Fab } from '@/components';
 
 import Plus from '../assets/plus.svg?react';
 
-export function GroupCreateFab() {
+export function ExpenseCreateFab() {
   return (
-    <Fab aria-label="새 모임 만들기" className="lg:hidden">
+    <Fab aria-label="지출 추가" className="lg:hidden">
       <Plus aria-hidden />
     </Fab>
   );
