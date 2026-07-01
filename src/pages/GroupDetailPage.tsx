@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
-import { Tabs } from '@/components';
+import { MoreButton, Navbar, Tabs } from '@/components';
 import {
   BalanceSummary,
   ExpenseCreateFab,
   ExpenseList,
-  GroupDetailNavbar,
   GroupStyleWrapper,
 } from '@/features/group/components';
 import { cn } from '@/utils/cn';
@@ -24,11 +23,17 @@ export function GroupDetailPage() {
     <GroupStyleWrapper>
       <GroupStyleWrapper.Navbar>
         {/* @TODO: 임시 정적 props — 라우트 파라미터/조회로 대체 */}
-        <GroupDetailNavbar
-          name="강릉 여행 모임"
-          attendeeCount={4}
-          date="2025.06.10"
-        />
+        <Navbar>
+          <Navbar.Start>
+            <Navbar.BackButton />
+            <Navbar.Title title={'강릉 여행 모임'} />
+            <Navbar.GroupInfo attendeeCount={4} date={'2025.06.10'} />
+          </Navbar.Start>
+
+          <Navbar.End>
+            <MoreButton />
+          </Navbar.End>
+        </Navbar>
       </GroupStyleWrapper.Navbar>
 
       <GroupStyleWrapper.Detail>

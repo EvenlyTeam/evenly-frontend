@@ -5,6 +5,7 @@ export { Chip } from './Chip.tsx';
 export { Fab } from './Fab';
 export { GroupCard } from './GroupCard';
 export { Input } from './Input';
+export { MoreButton } from './MoreButton';
 export { Navbar } from './Navbar';
 export { Tabs } from './Tabs';
 export { TextField } from './TextField';
