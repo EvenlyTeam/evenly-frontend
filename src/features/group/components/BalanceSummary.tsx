@@ -37,9 +37,9 @@ export function BalanceSummary() {
         </span>
       </div>
 
-      <hr className="mt-5 mb-4 border-border-subtle" />
+      <hr className="my-3 border-border-subtle" />
 
-      <div className="mt-3 flex items-center justify-between border-t border-border-subtle pt-3">
+      <div className="flex items-center justify-between">
         <span className="text-body-sm text-subtle-foreground">총 지출</span>
         <Amount value={total} className="text-body-md font-semibold" />
       </div>
