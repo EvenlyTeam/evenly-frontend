@@ -1,11 +1,12 @@
 import { BalanceSummary } from '@/components';
 import {
+  SettlementStyleWrapper,
   SharedSettlementError,
   SharedSettlementFooterLink,
   SharedSettlementHeader,
-  SharedSettlementStyleWrapper,
   TransferList,
 } from '@/features/settlement/components';
+import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 /* @TODO: 임시 정적 데이터 */
 const GROUP_NAME = '강릉 여행 모임';
@@ -24,6 +25,8 @@ const TRANSFERS = [
   { from: '서연', to: '민지', amount: 22000 },
 ];
 
+const CTA_HREF = '/';
+
 interface SharedSettlementPageProps {
   error?: boolean;
 }
@@ -31,28 +34,48 @@ interface SharedSettlementPageProps {
 export function SharedSettlementPage({
   error = false,
 }: SharedSettlementPageProps) {
+  const isDesktop = useIsDesktop();
+
   if (error) {
     return <SharedSettlementError />;
   }
 
   return (
-    <SharedSettlementStyleWrapper>
-      <SharedSettlementStyleWrapper.Header>
+    <SettlementStyleWrapper>
+      <SettlementStyleWrapper.Navbar>
+        {/* @TODO: 임시 정적 props */}
         <SharedSettlementHeader groupName={GROUP_NAME} total={TOTAL} />
-      </SharedSettlementStyleWrapper.Header>
+      </SettlementStyleWrapper.Navbar>
 
-      <SharedSettlementStyleWrapper.Body>
-        <TransferList transfers={TRANSFERS} />
+      <SettlementStyleWrapper.Body>
+        <SettlementStyleWrapper.Transfers>
+          <TransferList transfers={TRANSFERS} />
 
-        <div className="mt-6">
-          <BalanceSummary.NetBalances balances={BALANCES} />
-        </div>
-      </SharedSettlementStyleWrapper.Body>
+          {!isDesktop && <BalanceSummary.NetBalances balances={BALANCES} />}
+        </SettlementStyleWrapper.Transfers>
 
-      <SharedSettlementStyleWrapper.Footer>
-        {/* @TODO: 라우터 도입 후 홈/로그인 경로로 연결 */}
-        <SharedSettlementFooterLink text="evenly로 직접 정산하기 →" href="/" />
-      </SharedSettlementStyleWrapper.Footer>
-    </SharedSettlementStyleWrapper>
+        {isDesktop && (
+          <SettlementStyleWrapper.Summary>
+            <BalanceSummary>
+              <BalanceSummary.NetBalances balances={BALANCES} />
+              <BalanceSummary.Divider />
+              <SharedSettlementFooterLink
+                text="evenly로 직접 정산하기 →"
+                href={CTA_HREF}
+              />
+            </BalanceSummary>
+          </SettlementStyleWrapper.Summary>
+        )}
+      </SettlementStyleWrapper.Body>
+
+      {!isDesktop && (
+        <SettlementStyleWrapper.MobileBar>
+          <SharedSettlementFooterLink
+            text="evenly로 직접 정산하기 →"
+            href={CTA_HREF}
+          />
+        </SettlementStyleWrapper.MobileBar>
+      )}
+    </SettlementStyleWrapper>
   );
 }

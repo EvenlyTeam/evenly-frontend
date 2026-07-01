@@ -26,7 +26,6 @@ export function SharedSettlementError() {
           링크를 다시 확인해주세요.
         </p>
 
-        {/* @TODO: 라우터 도입 후 홈으로 이동 연결 */}
         <Button size="md" className="mt-6 px-6">
           evenly 시작하기 →
         </Button>

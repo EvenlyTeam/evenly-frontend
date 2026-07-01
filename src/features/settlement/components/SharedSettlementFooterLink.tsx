@@ -1,4 +1,4 @@
-interface SharedFooterLinkProps {
+interface SharedSettlementFooterLinkProps {
   text: string;
   href: string;
 }
@@ -6,11 +6,11 @@ interface SharedFooterLinkProps {
 export function SharedSettlementFooterLink({
   text,
   href,
-}: SharedFooterLinkProps) {
+}: SharedSettlementFooterLinkProps) {
   return (
     <a
       href={href}
-      className="cursor-pointer text-body-sm font-semibold text-primary"
+      className="block cursor-pointer text-center text-body-sm font-semibold text-primary"
     >
       {text}
     </a>
