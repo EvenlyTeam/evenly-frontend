@@ -4,7 +4,7 @@ import { BalanceSummary, Button, MoreButton, Navbar, Tabs } from '@/components';
 import {
   ExpenseCreateFab,
   ExpenseList,
-  GroupLayout,
+  GroupDetailLayout,
 } from '@/features/group/components';
 import type { ExpenseListItemData } from '@/features/group/types';
 import { cn } from '@/utils/cn';
@@ -53,8 +53,8 @@ export function GroupDetailPage() {
   const [tab, setTab] = useState<DetailTab>('expenses');
 
   return (
-    <GroupLayout>
-      <GroupLayout.Navbar>
+    <GroupDetailLayout>
+      <GroupDetailLayout.Navbar>
         <Navbar>
           <Navbar.Start>
             <Navbar.BackButton />
@@ -66,9 +66,9 @@ export function GroupDetailPage() {
             <MoreButton />
           </Navbar.End>
         </Navbar>
-      </GroupLayout.Navbar>
+      </GroupDetailLayout.Navbar>
 
-      <GroupLayout.DetailBody>
+      <GroupDetailLayout.Body>
         <Tabs
           className="w-full lg:hidden"
           value={tab}
@@ -76,13 +76,13 @@ export function GroupDetailPage() {
           tabs={TABS}
         />
 
-        <GroupLayout.Expenses
+        <GroupDetailLayout.Expenses
           className={cn(tab !== 'expenses' && 'max-lg:hidden')}
         >
           <ExpenseList expenses={EXPENSES} />
-        </GroupLayout.Expenses>
+        </GroupDetailLayout.Expenses>
 
-        <GroupLayout.Summary
+        <GroupDetailLayout.Summary
           className={cn(tab !== 'balance' && 'max-lg:hidden')}
         >
           <BalanceSummary>
@@ -100,10 +100,10 @@ export function GroupDetailPage() {
               </Button>
             </BalanceSummary.Actions>
           </BalanceSummary>
-        </GroupLayout.Summary>
-      </GroupLayout.DetailBody>
+        </GroupDetailLayout.Summary>
+      </GroupDetailLayout.Body>
 
       <ExpenseCreateFab />
-    </GroupLayout>
+    </GroupDetailLayout>
   );
 }

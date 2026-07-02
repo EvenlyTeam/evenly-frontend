@@ -1,23 +1,26 @@
 import { Navbar } from '@/components';
-import { GroupCreateForm, GroupLayout } from '@/features/group/components';
+import {
+  GroupCreateForm,
+  GroupCreateLayout,
+} from '@/features/group/components';
 
 export function GroupCreatePage() {
   return (
     <>
-      <GroupLayout>
-        <GroupLayout.Navbar>
+      <GroupCreateLayout>
+        <GroupCreateLayout.Navbar>
           <Navbar>
             <Navbar.Start>
               <Navbar.BackButton />
               <Navbar.Title title={'새 모임'} />
             </Navbar.Start>
           </Navbar>
-        </GroupLayout.Navbar>
+        </GroupCreateLayout.Navbar>
 
-        <GroupLayout.CreateBody>
+        <GroupCreateLayout.Body>
           <GroupCreateForm />
-        </GroupLayout.CreateBody>
-      </GroupLayout>
+        </GroupCreateLayout.Body>
+      </GroupCreateLayout>
     </>
   );
 }

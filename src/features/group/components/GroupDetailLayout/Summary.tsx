@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('GroupLayout');
+const Guard = createCompoundGuard('GroupDetailLayout');
 
 export function Summary({
   children,

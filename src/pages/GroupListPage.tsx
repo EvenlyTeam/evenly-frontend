@@ -1,5 +1,5 @@
 import { Navbar } from '@/components';
-import { GroupLayout, GroupList } from '@/features/group/components';
+import { GroupList, GroupListLayout } from '@/features/group/components';
 import type { GroupSummaryItem } from '@/features/group/types';
 
 const GROUPS: GroupSummaryItem[] = [
@@ -23,8 +23,8 @@ const GROUPS: GroupSummaryItem[] = [
 
 export function GroupListPage() {
   return (
-    <GroupLayout>
-      <GroupLayout.Navbar>
+    <GroupListLayout>
+      <GroupListLayout.Navbar>
         <Navbar>
           <Navbar.Start>
             <Navbar.Logo />
@@ -33,11 +33,11 @@ export function GroupListPage() {
             <Navbar.UserMenu userName={'남수민'} />
           </Navbar.End>
         </Navbar>
-      </GroupLayout.Navbar>
+      </GroupListLayout.Navbar>
 
-      <GroupLayout.ListBody>
+      <GroupListLayout.Body>
         <GroupList title="내 모임" groups={GROUPS} />
-      </GroupLayout.ListBody>
-    </GroupLayout>
+      </GroupListLayout.Body>
+    </GroupListLayout>
   );
 }

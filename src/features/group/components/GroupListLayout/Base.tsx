@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('GroupLayout');
+const Guard = createCompoundGuard('GroupListLayout');
 
 export function Base({ children }: PropsWithChildren) {
   return (
