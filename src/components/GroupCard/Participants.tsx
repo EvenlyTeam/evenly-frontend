@@ -7,12 +7,12 @@ const Guard = createCompoundGuard('GroupCard');
 
 const MAX_VISIBLE = 3;
 
-const attendeesDefaultStyles = 'ring-2 ring-surface -ml-2 first:ml-0';
+const participantsDefaultStyles = 'ring-2 ring-surface -ml-2 first:ml-0';
 
-const attendeesExtraStyles = 'bg-surface-muted text-subtle-foreground';
+const participantsExtraStyles = 'bg-surface-muted text-subtle-foreground';
 
-export function Attendees({ names }: { names: string[] }) {
-  Guard.useGuard('Attendees');
+export function Participants({ names }: { names: string[] }) {
+  Guard.useGuard('Participants');
 
   const visible = names.slice(0, MAX_VISIBLE);
   const extra = names.length - visible.length;
@@ -23,16 +23,16 @@ export function Attendees({ names }: { names: string[] }) {
         <Avatar
           key={i}
           size="sm"
-          label={name.charAt(0)}
-          className={attendeesDefaultStyles}
+          text={name.charAt(0)}
+          className={participantsDefaultStyles}
         />
       ))}
 
       {extra > 0 && (
         <Avatar
           size="sm"
-          label={`+${extra}`}
-          className={cn(attendeesDefaultStyles, attendeesExtraStyles)}
+          text={`+${extra}`}
+          className={cn(participantsDefaultStyles, participantsExtraStyles)}
         />
       )}
     </div>

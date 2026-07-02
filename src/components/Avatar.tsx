@@ -6,12 +6,12 @@ const sizeStyles = {
 } as const;
 
 interface AvatarProps {
-  label: string;
+  text: string;
   size: keyof typeof sizeStyles;
   className?: string;
 }
 
-export function Avatar({ label, size, className }: AvatarProps) {
+export function Avatar({ text, size, className }: AvatarProps) {
   return (
     <span
       className={cn(
@@ -21,7 +21,7 @@ export function Avatar({ label, size, className }: AvatarProps) {
         className,
       )}
     >
-      {label}
+      {text}
     </span>
   );
 }

@@ -3,22 +3,17 @@ import type { PropsWithChildren } from 'react';
 import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('SettlementStyleWrapper');
+const Guard = createCompoundGuard('SettlementLayout');
 
-export function Transfers({
+export function Summary({
   children,
   className,
 }: PropsWithChildren<{ className?: string }>) {
-  Guard.useGuard('Transfers');
+  Guard.useGuard('Summary');
 
   return (
-    <div
-      className={cn(
-        'flex min-w-0 flex-1 flex-col gap-4.5 max-lg:w-full',
-        className,
-      )}
-    >
+    <aside className={cn('w-full lg:w-95 lg:shrink-0', className)}>
       {children}
-    </div>
+    </aside>
   );
 }

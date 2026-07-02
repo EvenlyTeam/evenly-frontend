@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('SettlementStyleWrapper');
+const Guard = createCompoundGuard('GroupLayout');
 
 export function Navbar({ children }: PropsWithChildren) {
   Guard.useGuard('Navbar');

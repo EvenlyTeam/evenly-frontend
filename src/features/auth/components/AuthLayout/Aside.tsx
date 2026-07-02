@@ -2,10 +2,10 @@ import type { PropsWithChildren } from 'react';
 
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('AuthStyleWrapper');
+const Guard = createCompoundGuard('AuthLayout');
 
-export function BrandPanel({ children }: PropsWithChildren) {
-  Guard.useGuard('BrandPanel');
+export function Aside({ children }: PropsWithChildren) {
+  Guard.useGuard('Aside');
 
   return <div className="flex-2">{children}</div>;
 }

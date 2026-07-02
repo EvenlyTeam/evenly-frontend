@@ -1,7 +1,7 @@
 import { GroupCard } from '@/components/GroupCard';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
-import ChevronRight from '../assets/chevron-right.svg?react';
+import ChevronRightIcon from '../assets/chevron-right.svg?react';
 import { GroupCreateCard } from './GroupCreateCard';
 import { GroupCreateFab } from './GroupCreateFab';
 
@@ -15,7 +15,7 @@ const items = [
   { id: 6 },
   { id: 7 },
 ];
-const attendees = ['김OO', '박OO', '남OO', '이OO', '정OO'];
+const participants = ['김OO', '박OO', '남OO', '이OO', '정OO'];
 
 export function GroupList({ title }: { title: string }) {
   const isDesktop = useIsDesktop();
@@ -30,15 +30,15 @@ export function GroupList({ title }: { title: string }) {
         {items.map((item) => (
           <GroupCard key={item.id}>
             <div className="flex justify-between">
-              <GroupCard.Attendees names={attendees} />
+              <GroupCard.Participants names={participants} />
 
               {!isDesktop && <GroupCard.Status status="ongoing" />}
             </div>
 
             <GroupCard.Title title="그룹 이름" className="mt-3.5" />
 
-            <GroupCard.Detail
-              attendeeCount={4}
+            <GroupCard.Meta
+              participantCount={4}
               date={'2026.06.24'}
               className="mt-1 lg:mt-1.25"
             />
@@ -49,7 +49,7 @@ export function GroupList({ title }: { title: string }) {
 
                 <div className="mt-3.5 flex justify-between">
                   <GroupCard.Status status="ongoing" />
-                  <ChevronRight className="text-subtle-foreground" />
+                  <ChevronRightIcon className="text-subtle-foreground" />
                 </div>
               </>
             )}

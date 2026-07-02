@@ -4,7 +4,7 @@ export function AuthSignUpForm() {
   return (
     <form className="mt-10" onSubmit={(e) => e.preventDefault()}>
       <div className="space-y-4">
-        <TextField label="닉네임" id="nickname" placeholder="Evenely" />
+        <TextField label="닉네임" id="nickname" placeholder="Evenly" />
         <TextField
           label="이메일"
           id="email"

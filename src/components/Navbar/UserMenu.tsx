@@ -11,7 +11,7 @@ export function UserMenu({ userName }: { userName: string }) {
 
   return (
     <button type="button" aria-label="사용자 메뉴">
-      <Avatar label={initial} size="lg" aria-hidden />
+      <Avatar text={initial} size="lg" aria-hidden />
     </button>
   );
 }

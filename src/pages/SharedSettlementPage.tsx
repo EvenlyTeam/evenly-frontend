@@ -1,6 +1,6 @@
 import { BalanceSummary } from '@/components';
 import {
-  SettlementStyleWrapper,
+  SettlementLayout,
   SharedSettlementError,
   SharedSettlementFooterLink,
   SharedSettlementHeader,
@@ -41,21 +41,21 @@ export function SharedSettlementPage({
   }
 
   return (
-    <SettlementStyleWrapper>
-      <SettlementStyleWrapper.Navbar>
+    <SettlementLayout>
+      <SettlementLayout.Navbar>
         {/* @TODO: 임시 정적 props */}
-        <SharedSettlementHeader groupName={GROUP_NAME} total={TOTAL} />
-      </SettlementStyleWrapper.Navbar>
+        <SharedSettlementHeader groupName={GROUP_NAME} amount={TOTAL} />
+      </SettlementLayout.Navbar>
 
-      <SettlementStyleWrapper.Body>
-        <SettlementStyleWrapper.Transfers>
+      <SettlementLayout.Body>
+        <SettlementLayout.Transfers>
           <TransferList transfers={TRANSFERS} />
 
           {!isDesktop && <BalanceSummary.NetBalances balances={BALANCES} />}
-        </SettlementStyleWrapper.Transfers>
+        </SettlementLayout.Transfers>
 
         {isDesktop && (
-          <SettlementStyleWrapper.Summary>
+          <SettlementLayout.Summary>
             <BalanceSummary>
               <BalanceSummary.NetBalances balances={BALANCES} />
               <BalanceSummary.Divider />
@@ -64,18 +64,18 @@ export function SharedSettlementPage({
                 href={CTA_HREF}
               />
             </BalanceSummary>
-          </SettlementStyleWrapper.Summary>
+          </SettlementLayout.Summary>
         )}
-      </SettlementStyleWrapper.Body>
+      </SettlementLayout.Body>
 
       {!isDesktop && (
-        <SettlementStyleWrapper.MobileBar>
+        <SettlementLayout.MobileBar>
           <SharedSettlementFooterLink
             text="evenly로 직접 정산하기 →"
             href={CTA_HREF}
           />
-        </SettlementStyleWrapper.MobileBar>
+        </SettlementLayout.MobileBar>
       )}
-    </SettlementStyleWrapper>
+    </SettlementLayout>
   );
 }

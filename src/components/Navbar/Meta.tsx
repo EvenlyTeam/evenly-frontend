@@ -2,17 +2,17 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('Navbar');
 
-interface GroupInfoProps {
-  attendeeCount: number;
+interface MetaProps {
+  participantCount: number;
   date: string;
 }
 
-export function GroupInfo({ attendeeCount, date }: GroupInfoProps) {
-  Guard.useGuard('GroupInfo');
+export function Meta({ participantCount, date }: MetaProps) {
+  Guard.useGuard('Meta');
 
   return (
     <div className="self-end text-body-sm text-subtle-foreground">
-      {`${attendeeCount}명 · ${date}`}
+      {`${participantCount}명 · ${date}`}
     </div>
   );
 }

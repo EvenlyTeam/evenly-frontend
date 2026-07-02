@@ -1,18 +1,16 @@
 import { Amount } from '@/components';
 
-interface PersonalExpensePreviewRow {
+interface FinalAmountListRow {
   id: string;
   name: string;
   amount: number;
 }
 
-interface PersonalExpensePreviewListProps {
-  rows: PersonalExpensePreviewRow[];
+interface FinalAmountListProps {
+  rows: FinalAmountListRow[];
 }
 
-export function PersonalExpensePreviewList({
-  rows,
-}: PersonalExpensePreviewListProps) {
+export function FinalAmountList({ rows }: FinalAmountListProps) {
   return (
     <div>
       <p className="mb-2 text-label text-muted-foreground">

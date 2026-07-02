@@ -1,12 +1,12 @@
 import { Amount } from '@/components';
 
-interface CommonExpensePreviewCardProps {
+interface PerPersonSplitCardProps {
   perPersonAmount: number;
 }
 
-export function CommonExpensePreviewCard({
-  perPersonAmount: perPersonAmount,
-}: CommonExpensePreviewCardProps) {
+export function PerPersonSplitCard({
+  perPersonAmount,
+}: PerPersonSplitCardProps) {
   return (
     <div className="flex flex-col gap-1.5 rounded-card bg-preview-surface p-5 text-preview-foreground">
       <span className="text-body-md text-preview-foreground/85">

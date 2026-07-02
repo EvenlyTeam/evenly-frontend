@@ -1,10 +1,10 @@
 import { Navbar } from '@/components';
-import { GroupList, GroupStyleWrapper } from '@/features/group/components';
+import { GroupLayout,GroupList } from '@/features/group/components';
 
 export function GroupListPage() {
   return (
-    <GroupStyleWrapper>
-      <GroupStyleWrapper.Navbar>
+    <GroupLayout>
+      <GroupLayout.Navbar>
         <Navbar>
           <Navbar.Start>
             <Navbar.Logo />
@@ -13,11 +13,11 @@ export function GroupListPage() {
             <Navbar.UserMenu userName={'남수민'} />
           </Navbar.End>
         </Navbar>
-      </GroupStyleWrapper.Navbar>
+      </GroupLayout.Navbar>
 
-      <GroupStyleWrapper.List>
+      <GroupLayout.ListBody>
         <GroupList title="내 모임" />
-      </GroupStyleWrapper.List>
-    </GroupStyleWrapper>
+      </GroupLayout.ListBody>
+    </GroupLayout>
   );
 }

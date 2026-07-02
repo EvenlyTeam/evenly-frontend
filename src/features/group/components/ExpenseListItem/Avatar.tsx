@@ -5,5 +5,5 @@ const Guard = createCompoundGuard('ExpenseListItem');
 
 export function Avatar({ name }: { name: string }) {
   Guard.useGuard('Avatar');
-  return <AvatarBase size="lg" label={name.charAt(0)} />;
+  return <AvatarBase size="lg" text={name.charAt(0)} />;
 }

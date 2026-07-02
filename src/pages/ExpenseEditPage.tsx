@@ -1,4 +1,4 @@
-import { ExpenseView } from '@/features/expense/components';
+import { ExpenseEditor } from '@/features/expense/components';
 
 const PARTICIPANTS = [
   {
@@ -33,7 +33,7 @@ const PARTICIPANTS = [
 
 export function ExpenseEditPage() {
   return (
-    <ExpenseView
+    <ExpenseEditor
       mode="edit"
       description="저녁 고깃집"
       amount={120000}

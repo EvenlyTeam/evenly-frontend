@@ -3,7 +3,7 @@ import { Button } from '@/components';
 import PlusIcon from '../assets/plus.svg?react';
 import { ExpenseListItem } from './ExpenseListItem';
 
-interface ExpenseItem {
+interface ExpenseListItemData {
   id: string;
   payer: string;
   description: string;
@@ -12,7 +12,7 @@ interface ExpenseItem {
 }
 
 // @TODO: 임시 정적 데이터 — API 연동 시 제거
-const expenses: ExpenseItem[] = [
+const expenses: ExpenseListItemData[] = [
   {
     id: '1',
     payer: '민지',

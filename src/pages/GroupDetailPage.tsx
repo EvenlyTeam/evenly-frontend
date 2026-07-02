@@ -4,7 +4,7 @@ import { BalanceSummary, Button, MoreButton, Navbar, Tabs } from '@/components';
 import {
   ExpenseCreateFab,
   ExpenseList,
-  GroupStyleWrapper,
+  GroupLayout,
 } from '@/features/group/components';
 import { cn } from '@/utils/cn';
 
@@ -29,23 +29,23 @@ export function GroupDetailPage() {
   const [tab, setTab] = useState<DetailTab>('expenses');
 
   return (
-    <GroupStyleWrapper>
-      <GroupStyleWrapper.Navbar>
+    <GroupLayout>
+      <GroupLayout.Navbar>
         {/* @TODO: 임시 정적 props */}
         <Navbar>
           <Navbar.Start>
             <Navbar.BackButton />
             <Navbar.Title title={'강릉 여행 모임'} />
-            <Navbar.GroupInfo attendeeCount={4} date={'2025.06.10'} />
+            <Navbar.Meta participantCount={4} date={'2025.06.10'} />
           </Navbar.Start>
 
           <Navbar.End>
             <MoreButton />
           </Navbar.End>
         </Navbar>
-      </GroupStyleWrapper.Navbar>
+      </GroupLayout.Navbar>
 
-      <GroupStyleWrapper.Detail>
+      <GroupLayout.DetailBody>
         <Tabs
           className="w-full lg:hidden"
           value={tab}
@@ -53,13 +53,13 @@ export function GroupDetailPage() {
           tabs={TABS}
         />
 
-        <GroupStyleWrapper.Expenses
+        <GroupLayout.Expenses
           className={cn(tab !== 'expenses' && 'max-lg:hidden')}
         >
           <ExpenseList />
-        </GroupStyleWrapper.Expenses>
+        </GroupLayout.Expenses>
 
-        <GroupStyleWrapper.Summary
+        <GroupLayout.Summary
           className={cn(tab !== 'balance' && 'max-lg:hidden')}
         >
           <BalanceSummary>
@@ -77,10 +77,10 @@ export function GroupDetailPage() {
               </Button>
             </BalanceSummary.Actions>
           </BalanceSummary>
-        </GroupStyleWrapper.Summary>
-      </GroupStyleWrapper.Detail>
+        </GroupLayout.Summary>
+      </GroupLayout.DetailBody>
 
       <ExpenseCreateFab />
-    </GroupStyleWrapper>
+    </GroupLayout>
   );
 }

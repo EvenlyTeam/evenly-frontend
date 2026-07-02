@@ -1,7 +1,7 @@
 import {
-  AuthBrandPanel,
-  AuthSignInFormPanel,
-  AuthStyleWrapper,
+  AuthBrandingPanel,
+  AuthLayout,
+  AuthSignInPanel,
 } from '@/features/auth/components';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
@@ -9,16 +9,16 @@ export function SignInPage() {
   const isDesktop = useIsDesktop();
 
   return (
-    <AuthStyleWrapper>
+    <AuthLayout>
       {isDesktop && (
-        <AuthStyleWrapper.BrandPanel>
-          <AuthBrandPanel />
-        </AuthStyleWrapper.BrandPanel>
+        <AuthLayout.Aside>
+          <AuthBrandingPanel />
+        </AuthLayout.Aside>
       )}
 
-      <AuthStyleWrapper.FormPanel>
-        <AuthSignInFormPanel />
-      </AuthStyleWrapper.FormPanel>
-    </AuthStyleWrapper>
+      <AuthLayout.Body>
+        <AuthSignInPanel />
+      </AuthLayout.Body>
+    </AuthLayout>
   );
 }

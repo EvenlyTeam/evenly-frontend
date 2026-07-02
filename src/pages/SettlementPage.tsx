@@ -1,7 +1,7 @@
 import { BalanceSummary, Navbar } from '@/components';
 import {
   SettlementActions,
-  SettlementStyleWrapper,
+  SettlementLayout,
   SettlementTotal,
   TransferList,
 } from '@/features/settlement/components';
@@ -28,8 +28,8 @@ export function SettlementPage() {
   const isDesktop = useIsDesktop();
 
   return (
-    <SettlementStyleWrapper>
-      <SettlementStyleWrapper.Navbar>
+    <SettlementLayout>
+      <SettlementLayout.Navbar>
         {/* @TODO: 임시 정적 props */}
         <Navbar>
           <Navbar.Start>
@@ -38,13 +38,13 @@ export function SettlementPage() {
           </Navbar.Start>
 
           <Navbar.End>
-            <SettlementTotal value={TOTAL} />
+            <SettlementTotal amount={TOTAL} />
           </Navbar.End>
         </Navbar>
-      </SettlementStyleWrapper.Navbar>
+      </SettlementLayout.Navbar>
 
-      <SettlementStyleWrapper.Body>
-        <SettlementStyleWrapper.Transfers>
+      <SettlementLayout.Body>
+        <SettlementLayout.Transfers>
           {!isDesktop && (
             <BalanceSummary>
               <BalanceSummary.MyBalance amount={MY_BALANCE} />
@@ -54,10 +54,10 @@ export function SettlementPage() {
           <TransferList transfers={TRANSFERS} />
 
           {!isDesktop && <BalanceSummary.NetBalances balances={BALANCES} />}
-        </SettlementStyleWrapper.Transfers>
+        </SettlementLayout.Transfers>
 
         {isDesktop && (
-          <SettlementStyleWrapper.Summary>
+          <SettlementLayout.Summary>
             <BalanceSummary>
               <BalanceSummary.MyBalance amount={MY_BALANCE} />
               <BalanceSummary.NetBalances balances={BALANCES} />
@@ -66,17 +66,17 @@ export function SettlementPage() {
                 <SettlementActions />
               </BalanceSummary.Actions>
             </BalanceSummary>
-          </SettlementStyleWrapper.Summary>
+          </SettlementLayout.Summary>
         )}
-      </SettlementStyleWrapper.Body>
+      </SettlementLayout.Body>
 
       {!isDesktop && (
-        <SettlementStyleWrapper.MobileBar>
+        <SettlementLayout.MobileBar>
           <BalanceSummary.Actions>
             <SettlementActions />
           </BalanceSummary.Actions>
-        </SettlementStyleWrapper.MobileBar>
+        </SettlementLayout.MobileBar>
       )}
-    </SettlementStyleWrapper>
+    </SettlementLayout>
   );
 }

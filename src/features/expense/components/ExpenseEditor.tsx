@@ -1,14 +1,14 @@
 import { Button, Modal } from '@/components';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
-import { CommonExpensePreviewCard } from './CommonExpensePreviewCard';
 import { ExpenseForm } from './ExpenseForm';
 import { ExpenseScreenLayout } from './ExpenseScreenLayout';
 import { ExpenseSummarySaveBar } from './ExpenseSummarySaveBar';
+import { FinalAmountList } from './FinalAmountList';
 import type { ExpenseParticipantRow } from './ParticipantSelector';
-import { PersonalExpensePreviewList } from './PersonalExpensePreviewList';
+import { PerPersonSplitCard } from './PerPersonSplitCard';
 
-interface ExpenseViewProps {
+interface ExpenseEditorProps {
   mode: 'add' | 'edit';
   description: string;
   amount: number;
@@ -17,14 +17,14 @@ interface ExpenseViewProps {
   canSave: boolean;
 }
 
-export function ExpenseView({
+export function ExpenseEditor({
   mode,
   description,
   amount,
   participants,
   perPersonAmount,
   canSave,
-}: ExpenseViewProps) {
+}: ExpenseEditorProps) {
   const isDesktop = useIsDesktop();
   const title = mode === 'edit' ? '지출 수정' : '지출 추가';
 
@@ -70,10 +70,10 @@ export function ExpenseView({
           <div className="min-w-0 flex-[0_0_54%]">{form}</div>
 
           <div className="flex min-w-0 flex-1 flex-col">
-            <CommonExpensePreviewCard perPersonAmount={perPersonAmount} />
+            <PerPersonSplitCard perPersonAmount={perPersonAmount} />
 
             <div className="mt-4.5">
-              <PersonalExpensePreviewList rows={checkedRows} />
+              <FinalAmountList rows={checkedRows} />
             </div>
 
             <div className="mt-auto pt-5">

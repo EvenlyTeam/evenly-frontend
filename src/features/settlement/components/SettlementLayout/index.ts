@@ -5,7 +5,7 @@ import { Navbar } from './Navbar';
 import { Summary } from './Summary';
 import { Transfers } from './Transfers';
 
-export const SettlementStyleWrapper = Object.assign(Base, {
+export const SettlementLayout = Object.assign(Base, {
   Navbar,
   Body,
   Transfers,
