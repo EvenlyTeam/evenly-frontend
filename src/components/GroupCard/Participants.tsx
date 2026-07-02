@@ -1,5 +1,6 @@
 import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
+import { getInitial } from '@/utils/getInitial';
 
 import { Avatar } from '../Avatar';
 
@@ -23,7 +24,7 @@ export function Participants({ names }: { names: string[] }) {
         <Avatar
           key={i}
           size="sm"
-          text={name.charAt(0)}
+          text={getInitial(name)}
           className={participantsDefaultStyles}
         />
       ))}
