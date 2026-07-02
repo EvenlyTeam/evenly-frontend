@@ -37,7 +37,7 @@ export function GroupList({ title }: { title: string }) {
 
             <GroupCard.Title title="그룹 이름" className="mt-3.5" />
 
-            <GroupCard.Detail
+            <GroupCard.Meta
               participantCount={4}
               date={'2026.06.24'}
               className="mt-1 lg:mt-1.25"

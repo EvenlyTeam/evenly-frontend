@@ -36,7 +36,7 @@ export function GroupDetailPage() {
           <Navbar.Start>
             <Navbar.BackButton />
             <Navbar.Title title={'강릉 여행 모임'} />
-            <Navbar.GroupInfo participantCount={4} date={'2025.06.10'} />
+            <Navbar.Meta participantCount={4} date={'2025.06.10'} />
           </Navbar.Start>
 
           <Navbar.End>
