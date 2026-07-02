@@ -23,7 +23,7 @@ export function Participants({ names }: { names: string[] }) {
         <Avatar
           key={i}
           size="sm"
-          label={name.charAt(0)}
+          text={name.charAt(0)}
           className={participantsDefaultStyles}
         />
       ))}
@@ -31,7 +31,7 @@ export function Participants({ names }: { names: string[] }) {
       {extra > 0 && (
         <Avatar
           size="sm"
-          label={`+${extra}`}
+          text={`+${extra}`}
           className={cn(participantsDefaultStyles, participantsExtraStyles)}
         />
       )}
