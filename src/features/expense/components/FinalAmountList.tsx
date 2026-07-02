@@ -6,13 +6,11 @@ interface PersonalExpensePreviewRow {
   amount: number;
 }
 
-interface PersonalExpensePreviewListProps {
+interface FinalAmountListProps {
   rows: PersonalExpensePreviewRow[];
 }
 
-export function PersonalExpensePreviewList({
-  rows,
-}: PersonalExpensePreviewListProps) {
+export function FinalAmountList({ rows }: FinalAmountListProps) {
   return (
     <div>
       <p className="mb-2 text-label text-muted-foreground">
