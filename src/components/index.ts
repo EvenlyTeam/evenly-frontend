@@ -3,7 +3,7 @@ export { AmountField } from './AmountField';
 export { Avatar } from './Avatar';
 export { BalanceSummary } from './BalanceSummary';
 export { Button } from './Button';
-export { Chip } from './Chip.tsx';
+export { Chip } from './Chip';
 export { Fab } from './Fab';
 export { GroupCard } from './GroupCard';
 export { Input } from './Input';
