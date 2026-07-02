@@ -15,7 +15,7 @@ const items = [
   { id: 6 },
   { id: 7 },
 ];
-const attendees = ['김OO', '박OO', '남OO', '이OO', '정OO'];
+const participants = ['김OO', '박OO', '남OO', '이OO', '정OO'];
 
 export function GroupList({ title }: { title: string }) {
   const isDesktop = useIsDesktop();
@@ -30,7 +30,7 @@ export function GroupList({ title }: { title: string }) {
         {items.map((item) => (
           <GroupCard key={item.id}>
             <div className="flex justify-between">
-              <GroupCard.Attendees names={attendees} />
+              <GroupCard.Participants names={participants} />
 
               {!isDesktop && <GroupCard.Status status="ongoing" />}
             </div>
@@ -38,7 +38,7 @@ export function GroupList({ title }: { title: string }) {
             <GroupCard.Title title="그룹 이름" className="mt-3.5" />
 
             <GroupCard.Detail
-              attendeeCount={4}
+              participantCount={4}
               date={'2026.06.24'}
               className="mt-1 lg:mt-1.25"
             />

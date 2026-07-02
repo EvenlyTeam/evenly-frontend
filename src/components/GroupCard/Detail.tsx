@@ -6,11 +6,11 @@ const Guard = createCompoundGuard('GroupCard');
  * @TODO: 날짜 문자열 포맷 미정
  */
 export function Detail({
-  attendeeCount,
+  participantCount,
   date,
   className = '',
 }: {
-  attendeeCount: number;
+  participantCount: number;
   date: string;
   className?: string;
 }) {
@@ -18,7 +18,7 @@ export function Detail({
 
   return (
     <div className={`text-body-sm text-subtle-foreground ${className}`}>
-      {`${attendeeCount}명 · ${date}`}
+      {`${participantCount}명 · ${date}`}
     </div>
   );
 }
