@@ -1,12 +1,13 @@
 export { Amount } from './Amount';
+export { AmountField } from './AmountField';
 export { Avatar } from './Avatar';
-export { BalanceBar } from './BalanceBar';
 export { BalanceSummary } from './BalanceSummary';
 export { Button } from './Button';
 export { Chip } from './Chip.tsx';
 export { Fab } from './Fab';
 export { GroupCard } from './GroupCard';
 export { Input } from './Input';
+export { Modal } from './Modal';
 export { MoreButton } from './MoreButton';
 export { Navbar } from './Navbar';
 export { Tabs } from './Tabs';
