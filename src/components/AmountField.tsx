@@ -1,4 +1,5 @@
 import { cn } from '@/utils/cn';
+import { formatNumber } from '@/utils/format';
 
 interface AmountFieldProps {
   id: string;
@@ -15,7 +16,7 @@ interface AmountFieldProps {
 const DEFAULT_QUICK_ADD_AMOUNTS = [10000, 50000, 100000];
 
 function formatQuickAddLabel(amount: number): string {
-  return `+${(amount / 10000).toLocaleString('ko-KR')}만`;
+  return `+${formatNumber(amount / 10000)}만`;
 }
 
 // @TODO: QuickAddAmounts 분리 고려, 공용 컴포넌트는 className을 항상 열어놓아야 할까?ㄴ
@@ -30,7 +31,7 @@ export function AmountField({
   placeholder = '0',
   className,
 }: AmountFieldProps) {
-  const display = value > 0 ? value.toLocaleString('ko-KR') : '';
+  const display = value > 0 ? formatNumber(value) : '';
 
   const handleChange = (raw: string) => {
     const digits = raw.replace(/[^\d]/g, '');
