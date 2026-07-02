@@ -2,13 +2,12 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('GroupCard');
 
-export function Title({
-  title,
-  className = '',
-}: {
+interface TitleProps {
   title: string;
   className?: string;
-}) {
+}
+
+export function Title({ title, className = '' }: TitleProps) {
   Guard.useGuard('Title');
 
   return (

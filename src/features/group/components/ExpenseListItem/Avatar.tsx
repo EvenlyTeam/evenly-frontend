@@ -4,7 +4,11 @@ import { getInitial } from '@/utils/getInitial';
 
 const Guard = createCompoundGuard('ExpenseListItem');
 
-export function Avatar({ name }: { name: string }) {
+interface AvatarProps {
+  name: string;
+}
+
+export function Avatar({ name }: AvatarProps) {
   Guard.useGuard('Avatar');
   return <AvatarBase size="lg" text={getInitial(name)} />;
 }

@@ -12,7 +12,11 @@ const participantsDefaultStyles = 'ring-2 ring-surface -ml-2 first:ml-0';
 
 const participantsExtraStyles = 'bg-surface-muted text-subtle-foreground';
 
-export function Participants({ names }: { names: string[] }) {
+interface ParticipantsProps {
+  names: string[];
+}
+
+export function Participants({ names }: ParticipantsProps) {
   Guard.useGuard('Participants');
 
   const visible = names.slice(0, MAX_VISIBLE);

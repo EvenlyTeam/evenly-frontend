@@ -2,7 +2,11 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('Navbar');
 
-export function Title({ title }: { title: string }) {
+interface TitleProps {
+  title: string;
+}
+
+export function Title({ title }: TitleProps) {
   Guard.useGuard('Title');
 
   return (

@@ -2,13 +2,12 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('ExpenseListItem');
 
-export function Content({
-  description,
-  meta,
-}: {
+interface ContentProps {
   description: string;
   meta: string;
-}) {
+}
+
+export function Content({ description, meta }: ContentProps) {
   Guard.useGuard('Content');
   return (
     <div className="min-w-0 flex-1">

@@ -5,7 +5,11 @@ import { Avatar } from '../Avatar';
 
 const Guard = createCompoundGuard('Navbar');
 
-export function UserMenu({ userName }: { userName: string }) {
+interface UserMenuProps {
+  userName: string;
+}
+
+export function UserMenu({ userName }: UserMenuProps) {
   Guard.useGuard('UserMenu');
 
   const initial = getInitial(userName);

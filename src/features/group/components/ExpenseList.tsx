@@ -4,7 +4,11 @@ import PlusIcon from '../assets/plus.svg?react';
 import type { ExpenseListItemData } from '../types';
 import { ExpenseListItem } from './ExpenseListItem';
 
-export function ExpenseList({ expenses }: { expenses: ExpenseListItemData[] }) {
+interface ExpenseListProps {
+  expenses: ExpenseListItemData[];
+}
+
+export function ExpenseList({ expenses }: ExpenseListProps) {
   return (
     <div>
       <div className="mb-3.5 flex items-center justify-between">

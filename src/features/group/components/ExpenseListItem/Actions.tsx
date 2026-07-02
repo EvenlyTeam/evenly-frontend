@@ -5,13 +5,12 @@ import TrashIcon from '../../assets/trash.svg?react';
 
 const Guard = createCompoundGuard('ExpenseListItem');
 
-export function Actions({
-  onEdit,
-  onDelete,
-}: {
+interface ActionsProps {
   onEdit?: () => void;
   onDelete?: () => void;
-}) {
+}
+
+export function Actions({ onEdit, onDelete }: ActionsProps) {
   Guard.useGuard('Actions');
   return (
     <div className="flex items-center gap-2.5">

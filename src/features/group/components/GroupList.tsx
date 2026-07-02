@@ -6,13 +6,12 @@ import type { GroupSummaryItem } from '../types';
 import { CreateFab } from './CreateFab';
 import { GroupCreateCard } from './GroupCreateCard';
 
-export function GroupList({
-  title,
-  groups,
-}: {
+interface GroupListProps {
   title: string;
   groups: GroupSummaryItem[];
-}) {
+}
+
+export function GroupList({ title, groups }: GroupListProps) {
   const isDesktop = useIsDesktop();
 
   return (
