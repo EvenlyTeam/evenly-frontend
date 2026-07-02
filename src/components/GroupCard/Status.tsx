@@ -13,7 +13,11 @@ const statusLabel = {
   settled: '정산 완료',
 };
 
-export function Status({ status }: { status: 'ongoing' | 'settled' }) {
+interface StatusProps {
+  status: 'ongoing' | 'settled';
+}
+
+export function Status({ status }: StatusProps) {
   Guard.useGuard('Status');
 
   return (

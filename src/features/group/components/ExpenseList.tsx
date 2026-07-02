@@ -1,42 +1,14 @@
 import { Button } from '@/components';
 
 import PlusIcon from '../assets/plus.svg?react';
+import type { ExpenseListItemData } from '../types';
 import { ExpenseListItem } from './ExpenseListItem';
 
-interface ExpenseListItemData {
-  id: string;
-  payer: string;
-  description: string;
-  shareLabel: string;
-  amount: number;
+interface ExpenseListProps {
+  expenses: ExpenseListItemData[];
 }
 
-// @TODO: 임시 정적 데이터 — API 연동 시 제거
-const expenses: ExpenseListItemData[] = [
-  {
-    id: '1',
-    payer: '민지',
-    description: '저녁 고깃집',
-    shareLabel: '준호·민지·태우 분담',
-    amount: 120000,
-  },
-  {
-    id: '2',
-    payer: '준호',
-    description: '점심 칼국수',
-    shareLabel: '전체 분담',
-    amount: 48000,
-  },
-  {
-    id: '3',
-    payer: '태우',
-    description: '편의점 간식',
-    shareLabel: '전체 분담',
-    amount: 28500,
-  },
-];
-
-export function ExpenseList() {
+export function ExpenseList({ expenses }: ExpenseListProps) {
   return (
     <div>
       <div className="mb-3.5 flex items-center justify-between">

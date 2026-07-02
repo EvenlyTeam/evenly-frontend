@@ -77,13 +77,12 @@ function App() {
   );
 }
 
-const GoToPageButton = ({
-  page,
-  onPageChange,
-}: {
+interface GoToPageButtonProps {
   page: string;
   onPageChange: () => void;
-}) => {
+}
+
+const GoToPageButton = ({ page, onPageChange }: GoToPageButtonProps) => {
   return (
     <button
       className="mt-4 rounded bg-primary px-4 py-2 text-white"

@@ -2,22 +2,16 @@ import { GroupCard } from '@/components/GroupCard';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 import ChevronRightIcon from '../assets/chevron-right.svg?react';
+import type { GroupSummaryItem } from '../types';
+import { CreateFab } from './CreateFab';
 import { GroupCreateCard } from './GroupCreateCard';
-import { GroupCreateFab } from './GroupCreateFab';
 
-// @TODO: 임시 item 선언 제거
-const items = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-];
-const participants = ['김OO', '박OO', '남OO', '이OO', '정OO'];
+interface GroupListProps {
+  title: string;
+  groups: GroupSummaryItem[];
+}
 
-export function GroupList({ title }: { title: string }) {
+export function GroupList({ title, groups }: GroupListProps) {
   const isDesktop = useIsDesktop();
 
   return (
@@ -27,19 +21,19 @@ export function GroupList({ title }: { title: string }) {
       </div>
 
       <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-        {items.map((item) => (
-          <GroupCard key={item.id}>
+        {groups.map((group) => (
+          <GroupCard key={group.id}>
             <div className="flex justify-between">
-              <GroupCard.Participants names={participants} />
+              <GroupCard.Participants names={group.participantNames} />
 
-              {!isDesktop && <GroupCard.Status status="ongoing" />}
+              {!isDesktop && <GroupCard.Status status={group.status} />}
             </div>
 
-            <GroupCard.Title title="그룹 이름" className="mt-3.5" />
+            <GroupCard.Title title={group.name} className="mt-3.5" />
 
             <GroupCard.Meta
-              participantCount={4}
-              date={'2026.06.24'}
+              participantCount={group.participantCount}
+              date={group.date}
               className="mt-1 lg:mt-1.25"
             />
 
@@ -48,7 +42,7 @@ export function GroupList({ title }: { title: string }) {
                 <hr className="mt-4.5 border-border-subtle" />
 
                 <div className="mt-3.5 flex justify-between">
-                  <GroupCard.Status status="ongoing" />
+                  <GroupCard.Status status={group.status} />
                   <ChevronRightIcon className="text-subtle-foreground" />
                 </div>
               </>
@@ -56,7 +50,7 @@ export function GroupList({ title }: { title: string }) {
           </GroupCard>
         ))}
 
-        {isDesktop ? <GroupCreateCard /> : <GroupCreateFab />}
+        {isDesktop ? <GroupCreateCard /> : <CreateFab label="새 모임 만들기" />}
       </div>
     </div>
   );

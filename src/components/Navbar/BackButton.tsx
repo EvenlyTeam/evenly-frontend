@@ -3,13 +3,12 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('Navbar');
 
-export function BackButton({
-  onClick,
-  label = '뒤로 가기',
-}: {
+interface BackButtonProps {
   onClick?: () => void;
   label?: string;
-}) {
+}
+
+export function BackButton({ onClick, label = '뒤로 가기' }: BackButtonProps) {
   Guard.useGuard('BackButton');
 
   return (

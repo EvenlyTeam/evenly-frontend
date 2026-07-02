@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { BalanceSummary, Button, MoreButton, Navbar, Tabs } from '@/components';
 import {
-  ExpenseCreateFab,
+  CreateFab,
   ExpenseList,
-  GroupLayout,
+  GroupDetailLayout,
 } from '@/features/group/components';
+import type { ExpenseListItemData } from '@/features/group/types';
 import { cn } from '@/utils/cn';
 
 type DetailTab = 'expenses' | 'balance';
@@ -15,7 +16,6 @@ const TABS = [
   { value: 'balance', label: '순잔액' },
 ] as const satisfies ReadonlyArray<{ value: DetailTab; label: string }>;
 
-/* @TODO: 임시 정적 데이터 */
 const MY_BALANCE = 142000;
 const TOTAL = 196500;
 const BALANCES = [
@@ -25,13 +25,36 @@ const BALANCES = [
   { name: '태우', amount: -98000 },
 ];
 
+const EXPENSES: ExpenseListItemData[] = [
+  {
+    id: '1',
+    payer: '민지',
+    description: '저녁 고깃집',
+    shareLabel: '준호·민지·태우 분담',
+    amount: 120000,
+  },
+  {
+    id: '2',
+    payer: '준호',
+    description: '점심 칼국수',
+    shareLabel: '전체 분담',
+    amount: 48000,
+  },
+  {
+    id: '3',
+    payer: '태우',
+    description: '편의점 간식',
+    shareLabel: '전체 분담',
+    amount: 28500,
+  },
+];
+
 export function GroupDetailPage() {
   const [tab, setTab] = useState<DetailTab>('expenses');
 
   return (
-    <GroupLayout>
-      <GroupLayout.Navbar>
-        {/* @TODO: 임시 정적 props */}
+    <GroupDetailLayout>
+      <GroupDetailLayout.Navbar>
         <Navbar>
           <Navbar.Start>
             <Navbar.BackButton />
@@ -40,12 +63,12 @@ export function GroupDetailPage() {
           </Navbar.Start>
 
           <Navbar.End>
-            <MoreButton />
+            <MoreButton label="모임 메뉴" />
           </Navbar.End>
         </Navbar>
-      </GroupLayout.Navbar>
+      </GroupDetailLayout.Navbar>
 
-      <GroupLayout.DetailBody>
+      <GroupDetailLayout.Body>
         <Tabs
           className="w-full lg:hidden"
           value={tab}
@@ -53,13 +76,13 @@ export function GroupDetailPage() {
           tabs={TABS}
         />
 
-        <GroupLayout.Expenses
+        <GroupDetailLayout.Expenses
           className={cn(tab !== 'expenses' && 'max-lg:hidden')}
         >
-          <ExpenseList />
-        </GroupLayout.Expenses>
+          <ExpenseList expenses={EXPENSES} />
+        </GroupDetailLayout.Expenses>
 
-        <GroupLayout.Summary
+        <GroupDetailLayout.Summary
           className={cn(tab !== 'balance' && 'max-lg:hidden')}
         >
           <BalanceSummary>
@@ -77,10 +100,10 @@ export function GroupDetailPage() {
               </Button>
             </BalanceSummary.Actions>
           </BalanceSummary>
-        </GroupLayout.Summary>
-      </GroupLayout.DetailBody>
+        </GroupDetailLayout.Summary>
+      </GroupDetailLayout.Body>
 
-      <ExpenseCreateFab />
-    </GroupLayout>
+      <CreateFab label="지출 추가" />
+    </GroupDetailLayout>
   );
 }

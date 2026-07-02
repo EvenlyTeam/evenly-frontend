@@ -1,4 +1,5 @@
 import { cn } from '@/utils/cn';
+import { formatKRW } from '@/utils/format';
 
 interface AmountProps {
   value: number;
@@ -7,7 +8,7 @@ interface AmountProps {
   className?: string;
 }
 
-// @TODO: Amount 인터페이스 개선 방안 고려, 현재 도메인에 묶여있는 듯
+// @TODO: Amount 인터페이스 개선 방안 고려
 export function Amount({
   value,
   signed = false,
@@ -20,8 +21,7 @@ export function Amount({
   const showMinusSign = signed && isNegative;
 
   const sign = showMinusSign ? '−' : showPlusSign ? '+' : '';
-  const formatted = Math.abs(value).toLocaleString('ko-KR');
-  const text = `${sign}${formatted}원`;
+  const text = `${sign}${formatKRW(Math.abs(value))}`;
 
   return (
     <span

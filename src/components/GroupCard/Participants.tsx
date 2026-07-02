@@ -1,5 +1,6 @@
 import { cn } from '@/utils/cn';
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
+import { getInitial } from '@/utils/getInitial';
 
 import { Avatar } from '../Avatar';
 
@@ -11,7 +12,11 @@ const participantsDefaultStyles = 'ring-2 ring-surface -ml-2 first:ml-0';
 
 const participantsExtraStyles = 'bg-surface-muted text-subtle-foreground';
 
-export function Participants({ names }: { names: string[] }) {
+interface ParticipantsProps {
+  names: string[];
+}
+
+export function Participants({ names }: ParticipantsProps) {
   Guard.useGuard('Participants');
 
   const visible = names.slice(0, MAX_VISIBLE);
@@ -23,7 +28,7 @@ export function Participants({ names }: { names: string[] }) {
         <Avatar
           key={i}
           size="sm"
-          text={name.charAt(0)}
+          text={getInitial(name)}
           className={participantsDefaultStyles}
         />
       ))}

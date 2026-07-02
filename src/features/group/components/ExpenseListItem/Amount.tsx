@@ -3,7 +3,11 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('ExpenseListItem');
 
-export function Amount({ value }: { value: number }) {
+interface AmountProps {
+  value: number;
+}
+
+export function Amount({ value }: AmountProps) {
   Guard.useGuard('Amount');
   return <AmountBase value={value} className="text-body-lg font-semibold" />;
 }

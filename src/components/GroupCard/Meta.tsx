@@ -2,18 +2,13 @@ import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
 const Guard = createCompoundGuard('GroupCard');
 
-/**
- * @TODO: 날짜 문자열 포맷 미정
- */
-export function Meta({
-  participantCount,
-  date,
-  className = '',
-}: {
+interface MetaProps {
   participantCount: number;
   date: string;
   className?: string;
-}) {
+}
+
+export function Meta({ participantCount, date, className = '' }: MetaProps) {
   Guard.useGuard('Meta');
 
   return (

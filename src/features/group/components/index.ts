@@ -1,5 +1,7 @@
-export { ExpenseCreateFab } from './ExpenseCreateFab';
+export { CreateFab } from './CreateFab';
 export { ExpenseList } from './ExpenseList';
 export { GroupCreateForm } from './GroupCreateForm';
-export { GroupLayout } from './GroupLayout';
+export { GroupCreateLayout } from './GroupCreateLayout';
+export { GroupDetailLayout } from './GroupDetailLayout';
 export { GroupList } from './GroupList';
+export { GroupListLayout } from './GroupListLayout';
