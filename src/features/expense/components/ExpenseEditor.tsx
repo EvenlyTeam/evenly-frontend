@@ -1,11 +1,11 @@
 import { Button, Modal } from '@/components';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
+import type { ExpenseParticipantRow } from '../types';
 import { ExpenseForm } from './ExpenseForm';
 import { ExpenseScreenLayout } from './ExpenseScreenLayout';
 import { ExpenseSummarySaveBar } from './ExpenseSummarySaveBar';
 import { FinalAmountList } from './FinalAmountList';
-import type { ExpenseParticipantRow } from './ParticipantSelector';
 import { PerPersonSplitCard } from './PerPersonSplitCard';
 
 interface ExpenseEditorProps {

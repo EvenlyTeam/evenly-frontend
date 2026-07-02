@@ -1,12 +1,5 @@
+import type { ExpenseParticipantRow } from '../types';
 import { ParticipantRow } from './ParticipantRow';
-
-export interface ExpenseParticipantRow {
-  id: string;
-  name: string;
-  isPayer: boolean;
-  isChecked: boolean;
-  finalAmount: number;
-}
 
 interface ParticipantSelectorProps {
   participants: ExpenseParticipantRow[];

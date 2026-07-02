@@ -3,12 +3,9 @@ import { getInitial } from '@/utils/getInitial';
 
 import ArrowRightIcon from '../assets/arrow-right.svg?react';
 import CopyIcon from '../assets/copy.svg?react';
+import type { Transfer } from '../types';
 
-interface TransferItemProps {
-  from: string;
-  to: string;
-  amount: number;
-}
+type TransferItemProps = Transfer;
 
 export function TransferItem({ from, to, amount }: TransferItemProps) {
   return (

@@ -1,10 +1,5 @@
+import type { Transfer } from '../types';
 import { TransferItem } from './TransferItem';
-
-export interface Transfer {
-  from: string;
-  to: string;
-  amount: number;
-}
 
 interface TransferListProps {
   transfers: Transfer[];

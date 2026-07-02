@@ -1,9 +1,7 @@
 import { AmountField, TextField } from '@/components';
 
-import {
-  type ExpenseParticipantRow,
-  ParticipantSelector,
-} from './ParticipantSelector';
+import type { ExpenseParticipantRow } from '../types';
+import { ParticipantSelector } from './ParticipantSelector';
 
 interface ExpenseFormProps {
   description: string;

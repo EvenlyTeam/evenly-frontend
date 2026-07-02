@@ -1,15 +1,8 @@
 import { Button } from '@/components';
 
 import PlusIcon from '../assets/plus.svg?react';
+import type { ExpenseListItemData } from '../types';
 import { ExpenseListItem } from './ExpenseListItem';
-
-interface ExpenseListItemData {
-  id: string;
-  payer: string;
-  description: string;
-  shareLabel: string;
-  amount: number;
-}
 
 // @TODO: 임시 정적 데이터 — API 연동 시 제거
 const expenses: ExpenseListItemData[] = [
