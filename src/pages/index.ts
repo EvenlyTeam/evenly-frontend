@@ -1,3 +1,5 @@
+export { ExpenseAddPage } from './ExpenseAddPage';
+export { ExpenseEditPage } from './ExpenseEditPage';
 export { GroupCreatePage } from './GroupCreatePage';
 export { GroupDetailPage } from './GroupDetailPage';
 export { GroupListPage } from './GroupListPage';
