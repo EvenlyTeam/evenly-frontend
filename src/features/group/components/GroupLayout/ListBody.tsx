@@ -2,10 +2,10 @@ import type { PropsWithChildren } from 'react';
 
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('GroupStyleWrapper');
+const Guard = createCompoundGuard('GroupLayout');
 
-export function List({ children }: PropsWithChildren) {
-  Guard.useGuard('List');
+export function ListBody({ children }: PropsWithChildren) {
+  Guard.useGuard('ListBody');
 
   return (
     <div className="flex-1 p-4 lg:px-16 lg:py-8">
