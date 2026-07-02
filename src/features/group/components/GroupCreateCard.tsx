@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn';
 
-import Plus from '../assets/plus.svg?react';
+import PlusIcon from '../assets/plus.svg?react';
 
 export function GroupCreateCard() {
   return (
@@ -13,7 +13,7 @@ export function GroupCreateCard() {
       )}
     >
       <span className="flex size-10 items-center justify-center rounded-full bg-surface-muted">
-        <Plus />
+        <PlusIcon />
       </span>
       <span className="text-body-md">새 모임 만들기</span>
     </button>

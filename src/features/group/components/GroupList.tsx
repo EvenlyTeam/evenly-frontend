@@ -1,7 +1,7 @@
 import { GroupCard } from '@/components/GroupCard';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
-import ChevronRight from '../assets/chevron-right.svg?react';
+import ChevronRightIcon from '../assets/chevron-right.svg?react';
 import { GroupCreateCard } from './GroupCreateCard';
 import { GroupCreateFab } from './GroupCreateFab';
 
@@ -49,7 +49,7 @@ export function GroupList({ title }: { title: string }) {
 
                 <div className="mt-3.5 flex justify-between">
                   <GroupCard.Status status="ongoing" />
-                  <ChevronRight className="text-subtle-foreground" />
+                  <ChevronRightIcon className="text-subtle-foreground" />
                 </div>
               </>
             )}
