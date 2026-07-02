@@ -1,13 +1,13 @@
 import { Amount } from '@/components';
 
-interface PersonalExpensePreviewRow {
+interface FinalAmountListRow {
   id: string;
   name: string;
   amount: number;
 }
 
 interface FinalAmountListProps {
-  rows: PersonalExpensePreviewRow[];
+  rows: FinalAmountListRow[];
 }
 
 export function FinalAmountList({ rows }: FinalAmountListProps) {
