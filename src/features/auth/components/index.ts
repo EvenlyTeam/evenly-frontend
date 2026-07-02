@@ -1,4 +1,4 @@
-export { AuthBrandPanel } from './AuthBrandPanel';
-export { AuthSignInFormPanel } from './AuthSignInFormPanel';
-export { AuthSignUpFormPanel } from './AuthSignUpFormPanel';
-export { AuthStyleWrapper } from './AuthStyleWrapper';
+export { AuthBrandingPanel } from './AuthBrandingPanel';
+export { AuthLayout } from './AuthLayout';
+export { AuthSignInPanel } from './AuthSignInPanel';
+export { AuthSignUpPanel } from './AuthSignUpPanel';

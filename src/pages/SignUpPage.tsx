@@ -1,7 +1,7 @@
 import {
-  AuthBrandPanel,
-  AuthSignUpFormPanel,
-  AuthStyleWrapper,
+  AuthBrandingPanel,
+  AuthLayout,
+  AuthSignUpPanel,
 } from '@/features/auth/components';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
@@ -9,16 +9,16 @@ export function SignUpPage() {
   const isDesktop = useIsDesktop();
 
   return (
-    <AuthStyleWrapper>
+    <AuthLayout>
       {isDesktop && (
-        <AuthStyleWrapper.BrandPanel>
-          <AuthBrandPanel />
-        </AuthStyleWrapper.BrandPanel>
+        <AuthLayout.Aside>
+          <AuthBrandingPanel />
+        </AuthLayout.Aside>
       )}
 
-      <AuthStyleWrapper.FormPanel>
-        <AuthSignUpFormPanel />
-      </AuthStyleWrapper.FormPanel>
-    </AuthStyleWrapper>
+      <AuthLayout.Body>
+        <AuthSignUpPanel />
+      </AuthLayout.Body>
+    </AuthLayout>
   );
 }

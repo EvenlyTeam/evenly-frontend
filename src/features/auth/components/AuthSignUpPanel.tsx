@@ -2,9 +2,9 @@ import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 import { AuthFooterLink } from './AuthFooterLink';
 import { AuthHeader } from './AuthHeader';
-import { AuthSignInForm } from './AuthSignInForm';
+import { AuthSignUpForm } from './AuthSignUpForm';
 
-export function AuthSignInFormPanel() {
+export function AuthSignUpPanel() {
   const isDesktop = useIsDesktop();
 
   return (
@@ -12,18 +12,17 @@ export function AuthSignInFormPanel() {
       {isDesktop ? (
         <AuthHeader
           viewType="desktop"
-          title="로그인"
-          subtitle="다시 오신 걸 환영해요"
+          title="새 계정 만들기"
+          subtitle="몇 가지만 입력하면 끝나요"
         />
       ) : (
-        <AuthHeader viewType="mobile" subtitle="모임 정산을 깔끔하게" />
+        <AuthHeader viewType="mobile" subtitle="새 계정 만들기" />
       )}
-
-      <AuthSignInForm />
+      <AuthSignUpForm />
 
       <AuthFooterLink
-        message="아직 계정이 없으신가요?"
-        linkText="회원가입"
+        message="이미 계정이 있으신가요?"
+        linkText="로그인"
         href="#"
       />
     </>

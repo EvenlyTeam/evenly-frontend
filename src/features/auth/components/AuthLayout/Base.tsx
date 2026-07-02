@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { createCompoundGuard } from '@/utils/createCompoundGuard';
 
-const Guard = createCompoundGuard('AuthStyleWrapper');
+const Guard = createCompoundGuard('AuthLayout');
 
 export function Base({ children }: PropsWithChildren) {
   return (
