@@ -44,7 +44,7 @@ export function SharedSettlementPage({
     <SettlementLayout>
       <SettlementLayout.Navbar>
         {/* @TODO: 임시 정적 props */}
-        <SharedSettlementHeader groupName={GROUP_NAME} total={TOTAL} />
+        <SharedSettlementHeader groupName={GROUP_NAME} amount={TOTAL} />
       </SettlementLayout.Navbar>
 
       <SettlementLayout.Body>

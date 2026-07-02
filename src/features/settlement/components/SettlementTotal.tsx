@@ -1,15 +1,15 @@
 import { Amount } from '@/components';
 
 interface SettlementTotalProps {
-  value: number;
+  amount: number;
 }
 
-export function SettlementTotal({ value }: SettlementTotalProps) {
+export function SettlementTotal({ amount }: SettlementTotalProps) {
   return (
     <span className="text-body-sm text-subtle-foreground lg:text-body-lg lg:text-muted-foreground">
       총{' '}
       <Amount
-        value={value}
+        value={amount}
         className="text-subtle-foreground lg:text-muted-foreground"
       />
     </span>

@@ -38,7 +38,7 @@ export function SettlementPage() {
           </Navbar.Start>
 
           <Navbar.End>
-            <SettlementTotal value={TOTAL} />
+            <SettlementTotal amount={TOTAL} />
           </Navbar.End>
         </Navbar>
       </SettlementLayout.Navbar>
