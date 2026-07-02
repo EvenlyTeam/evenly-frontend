@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { BalanceSummary, Button, MoreButton, Navbar, Tabs } from '@/components';
 import {
-  ExpenseCreateFab,
+  CreateFab,
   ExpenseList,
   GroupDetailLayout,
 } from '@/features/group/components';
@@ -63,7 +63,7 @@ export function GroupDetailPage() {
           </Navbar.Start>
 
           <Navbar.End>
-            <MoreButton />
+            <MoreButton label="모임 메뉴" />
           </Navbar.End>
         </Navbar>
       </GroupDetailLayout.Navbar>
@@ -103,7 +103,7 @@ export function GroupDetailPage() {
         </GroupDetailLayout.Summary>
       </GroupDetailLayout.Body>
 
-      <ExpenseCreateFab />
+      <CreateFab label="지출 추가" />
     </GroupDetailLayout>
   );
 }

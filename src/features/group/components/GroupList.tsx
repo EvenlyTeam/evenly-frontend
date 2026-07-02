@@ -3,8 +3,8 @@ import { useIsDesktop } from '@/hooks/useIsDesktop';
 
 import ChevronRightIcon from '../assets/chevron-right.svg?react';
 import type { GroupSummaryItem } from '../types';
+import { CreateFab } from './CreateFab';
 import { GroupCreateCard } from './GroupCreateCard';
-import { GroupCreateFab } from './GroupCreateFab';
 
 export function GroupList({
   title,
@@ -51,7 +51,7 @@ export function GroupList({
           </GroupCard>
         ))}
 
-        {isDesktop ? <GroupCreateCard /> : <GroupCreateFab />}
+        {isDesktop ? <GroupCreateCard /> : <CreateFab label="새 모임 만들기" />}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-export { ExpenseCreateFab } from './ExpenseCreateFab';
+export { CreateFab } from './CreateFab';
 export { ExpenseList } from './ExpenseList';
 export { GroupCreateForm } from './GroupCreateForm';
 export { GroupCreateLayout } from './GroupCreateLayout';
