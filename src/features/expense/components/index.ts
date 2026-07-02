@@ -1,7 +1,7 @@
 export { ExpenseForm } from './ExpenseForm';
 export { ExpenseScreenLayout } from './ExpenseScreenLayout';
 export { ExpenseSummarySaveBar } from './ExpenseSummarySaveBar';
-export { ExpenseView } from './ExpenseView';
+export { ExpenseEditor } from './ExpenseEditor';
 export { FinalAmountList } from './FinalAmountList';
 export { ParticipantRow } from './ParticipantRow';
 export {

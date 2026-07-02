@@ -8,7 +8,7 @@ import { FinalAmountList } from './FinalAmountList';
 import type { ExpenseParticipantRow } from './ParticipantSelector';
 import { PerPersonSplitCard } from './PerPersonSplitCard';
 
-interface ExpenseViewProps {
+interface ExpenseEditorProps {
   mode: 'add' | 'edit';
   description: string;
   amount: number;
@@ -17,14 +17,14 @@ interface ExpenseViewProps {
   canSave: boolean;
 }
 
-export function ExpenseView({
+export function ExpenseEditor({
   mode,
   description,
   amount,
   participants,
   perPersonAmount,
   canSave,
-}: ExpenseViewProps) {
+}: ExpenseEditorProps) {
   const isDesktop = useIsDesktop();
   const title = mode === 'edit' ? '지출 수정' : '지출 추가';
 
