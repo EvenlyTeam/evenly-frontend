@@ -3,23 +3,37 @@ import { cn } from '@/utils/cn';
 interface AmountProps {
   value: number;
   signed?: boolean;
+  emphasizePositive?: boolean;
   className?: string;
 }
 
-export function Amount({ value, signed = false, className }: AmountProps) {
-  const sign = value > 0 ? '+' : value < 0 ? '−' : '';
-  const formatted = Math.abs(value).toLocaleString('ko-KR');
-  const text = signed ? `${sign}${formatted}원` : `${formatted}원`;
+// @TODO: Amount 인터페이스 개선 방안 고려, 현재 도메인에 묶여있는 듯
+export function Amount({
+  value,
+  signed = false,
+  emphasizePositive = true,
+  className,
+}: AmountProps) {
+  const isNegative = value < 0;
+  const isPositive = value > 0;
+  const showPlusSign = signed && isPositive && emphasizePositive;
+  const showMinusSign = signed && isNegative;
 
-  const colorClass = !signed
-    ? 'text-foreground'
-    : value > 0
-      ? 'text-positive'
-      : value < 0
-        ? 'text-negative'
-        : 'text-foreground';
+  const sign = showMinusSign ? '−' : showPlusSign ? '+' : '';
+  const formatted = Math.abs(value).toLocaleString('ko-KR');
+  const text = `${sign}${formatted}원`;
 
   return (
-    <span className={cn('tabular-nums', colorClass, className)}>{text}</span>
+    <span
+      className={cn(
+        'tabular-nums',
+        'text-foreground',
+        className,
+        showPlusSign && 'text-positive',
+        showMinusSign && 'text-negative',
+      )}
+    >
+      {text}
+    </span>
   );
 }

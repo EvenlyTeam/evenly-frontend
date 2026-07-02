@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import {
+  ExpenseAddPage,
+  ExpenseEditPage,
   GroupCreatePage,
   GroupDetailPage,
   GroupListPage,
@@ -51,6 +53,14 @@ function App() {
             page={'SharedSettlementError'}
             onPageChange={() => setPage('shared-settlement-error')}
           />
+          <GoToPageButton
+            page={'ExpenseAdd'}
+            onPageChange={() => setPage('expense-add')}
+          />
+          <GoToPageButton
+            page={'ExpenseEdit'}
+            onPageChange={() => setPage('expense-edit')}
+          />
         </div>
       )}
       {page === 'login' && <SignInPage />}
@@ -61,6 +71,8 @@ function App() {
       {page === 'settlement' && <SettlementPage />}
       {page === 'shared-settlement' && <SharedSettlementPage />}
       {page === 'shared-settlement-error' && <SharedSettlementPage error />}
+      {page === 'expense-add' && <ExpenseAddPage />}
+      {page === 'expense-edit' && <ExpenseEditPage />}
     </div>
   );
 }
